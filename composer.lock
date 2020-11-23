@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "70162668e31356474bcb5e46564373bc",
+    "content-hash": "e4453363bc86d99bd57afb499a947136",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2121,7 +2121,7 @@
         },
         {
             "name": "lbhurtado/sms",
-            "version": "dev-master",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lbhurtado/sms.git",
@@ -2143,7 +2143,6 @@
                 "orchestra/testbench": "^6.4",
                 "phpunit/phpunit": "^9.3.3"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -9384,9 +9383,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "lbhurtado/sms": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

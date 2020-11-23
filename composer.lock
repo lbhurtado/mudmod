@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd676f6e67514c94f8d0a7691257293b",
+    "content-hash": "70162668e31356474bcb5e46564373bc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2121,16 +2121,16 @@
         },
         {
             "name": "lbhurtado/sms",
-            "version": "v2.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lbhurtado/sms.git",
-                "reference": "0ac3b55cce8fca34ed2e500483ab9197b07d6b4c"
+                "reference": "1d1da426699237c90e7c537cc22d0233c0480428"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lbhurtado/sms/zipball/0ac3b55cce8fca34ed2e500483ab9197b07d6b4c",
-                "reference": "0ac3b55cce8fca34ed2e500483ab9197b07d6b4c",
+                "url": "https://api.github.com/repos/lbhurtado/sms/zipball/1d1da426699237c90e7c537cc22d0233c0480428",
+                "reference": "1d1da426699237c90e7c537cc22d0233c0480428",
                 "shasum": ""
             },
             "require": {
@@ -2143,6 +2143,7 @@
                 "orchestra/testbench": "^6.4",
                 "phpunit/phpunit": "^9.3.3"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -2178,9 +2179,9 @@
             ],
             "support": {
                 "issues": "https://github.com/lbhurtado/sms/issues",
-                "source": "https://github.com/lbhurtado/sms/tree/v2.0.0"
+                "source": "https://github.com/lbhurtado/sms/tree/v2.0.2"
             },
-            "time": "2020-11-21T12:17:52+00:00"
+            "time": "2020-11-23T02:56:30+00:00"
         },
         {
             "name": "lbhurtado/tactician",
@@ -9383,7 +9384,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "lbhurtado/sms": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

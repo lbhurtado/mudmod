@@ -20,17 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7350dbc-9d68-4cde-a127-1f7c095e012c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/Commands/BaseCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/TemplateAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mudmod.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mudmod.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Observers/ContactObserver.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CommandBus/Commands/PingCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CommandBus/Commands/PingCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CommandBus/Handlers/PingHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CommandBus/Handlers/PingHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CommandBus/PingAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CommandBus/PingAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/missive.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/missive.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/CommandBus/TemplateAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CommandBus/TemplateAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mudmod.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mudmod.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/sms.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/sms.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -227,7 +221,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606095077966</updated>
       <workItem from="1606095079756" duration="7512000" />
-      <workItem from="1606143603489" duration="6275000" />
+      <workItem from="1606143603489" duration="9566000" />
     </task>
     <servers />
   </component>
@@ -247,9 +241,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606215225858">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606215225858" />
     <state x="397" y="199" key="SettingsEditor" timestamp="1606095159114">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1606095159114" />
+    <state x="561" y="272" width="670" height="676" key="search.everywhere.popup" timestamp="1606228487121">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="561" y="272" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1606228487121" />
   </component>
 </project>

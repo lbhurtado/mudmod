@@ -67,8 +67,6 @@ class TemplateAction extends ActionAbstract implements ActionInterface
     {
         $contact = $this->router->missive->getContact();
 
-        return $contact; //TODO: check out permissions
-
         return $contact->hasPermissionTo($permission ?? $this->permission) ? $contact : null;
     }
 

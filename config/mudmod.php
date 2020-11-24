@@ -18,7 +18,7 @@ return [
     'permissions' => [
         'spokesman'  => ['send message', 'issue command', 'send broadcast'],
         'listener'   => ['issue command'],
-        'subscriber' => ['send message' ],
+        'subscriber' => ['send message' , 'issue command'],
         'forwarder'  => ['issue command'],
         'supporter'  => ['issue command'],
     ],

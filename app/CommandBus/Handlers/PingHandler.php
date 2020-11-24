@@ -2,23 +2,17 @@
 
 namespace App\CommandBus\Handlers;
 
-use LBHurtado\SMS\Facades\SMS;
+use App\Notifications\Pinged;
 use App\CommandBus\Commands\PingCommand;
 
 class PingHandler
 {
-    protected $message = 'PONG';
-
     /**
      * @param PingCommand $command
      */
     public function handle(PingCommand $command)
     {
-        SMS::from('TXTCMDR')
-            ->to($command->origin->mobile)
-            ->content($this->message)
-            ->send()
-        ;
+        $command->origin->notify(new Pinged);
     }
 }
 

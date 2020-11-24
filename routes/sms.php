@@ -9,4 +9,8 @@ $router->register('LOG {message}', function (string $path, array $values) {
     \Log::info($values['message']);
 });
 
-$router->register('PING', app(PingAction::class));
+//$router->register('PING', function (string $path, array $values) {
+//    dd($values);
+//});
+
+$router->register('PING', PingAction::class);

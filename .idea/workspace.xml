@@ -20,17 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7350dbc-9d68-4cde-a127-1f7c095e012c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/CommandBus/Commands/BaseCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/CommandBus/TemplateAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mudmod.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mudmod.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/CommandBus/Commands/PingCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CommandBus/Commands/PingCommand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/CommandBus/Handlers/PingHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CommandBus/Handlers/PingHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/CommandBus/PingAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CommandBus/PingAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/missive.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/missive.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/sms.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/sms.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -177,6 +185,7 @@
       <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
       <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
       <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kfcRLtvrF6vXSiOuusIIqIbxSp" />
@@ -187,7 +196,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/CommandBus/Commands" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -196,6 +205,12 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/CommandBus/Commands" />
+      <recent name="$PROJECT_DIR$/app/CommandBus" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -211,7 +226,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606095077966</updated>
-      <workItem from="1606095079756" duration="6091000" />
+      <workItem from="1606095079756" duration="7512000" />
+      <workItem from="1606143603489" duration="6275000" />
     </task>
     <servers />
   </component>
@@ -228,6 +244,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="397" y="199" key="SettingsEditor" timestamp="1606095159114">

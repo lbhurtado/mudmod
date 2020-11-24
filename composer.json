@@ -18,7 +18,8 @@
         "laravel/tinker": "^2.5",
         "lbhurtado/missive": "^2.0",
         "lbhurtado/sms": "^2.0.2",
-        "livewire/livewire": "^2.0"
+        "livewire/livewire": "^2.0",
+        "spatie/laravel-permission": "^3.17"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

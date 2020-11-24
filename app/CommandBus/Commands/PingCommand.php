@@ -2,18 +2,20 @@
 
 namespace App\CommandBus\Commands;
 
-class PingCommand
+use App\Models\Contact;
+
+class PingCommand extends BaseCommand
 {
-	/** @var string */
-	public $mobile;
+    /** @var Contact */
+    public $origin;
 
     /**
      * PingCommand constructor.
      *
-     * @param string $mobile
+     * @param Contact $origin
      */
-    public function __construct(string $mobile)
+    public function __construct(Contact $origin)
     {
-    	$this->mobile = phone($mobile, 'PH')->formatE164();
+        $this->origin = $origin;
     }
 }

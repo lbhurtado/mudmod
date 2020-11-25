@@ -28,7 +28,7 @@ return [
 //        'forwarder'  => env('FORWARDER_VOUCHERS',2),
 //        'supporter'  => env('SUPPORTER_VOUCHERS',5),
 //    ],
-//    'signature' => env('SIGNATURE', 'SMS Relay'),
+    'signature' => env('SIGNATURE', 'Mudmod'),
 //    'credits' => [
 //        'initial' => [
 //            'spokesman' => env('SPOKESMAN_CREDIT', 10),

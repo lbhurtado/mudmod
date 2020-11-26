@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7350dbc-9d68-4cde-a127-1f7c095e012c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CommandBus/PingAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CommandBus/PingAction.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +223,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606095077966</updated>
       <workItem from="1606095079756" duration="7512000" />
-      <workItem from="1606143603489" duration="39475000" />
+      <workItem from="1606143603489" duration="40489000" />
     </task>
     <servers />
   </component>
@@ -246,6 +246,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="625" y="380" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606399598725">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="625" y="380" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1606399598725" />
     <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser" timestamp="1606299020943">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>

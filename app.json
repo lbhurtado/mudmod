@@ -1,38 +1,50 @@
 {
-  "name": "mudmod",
-  "scripts": {
-    "postdeploy": "php artisan postdeploy:heroku"
-  },
-  "stack": "heroku-16",
-  "env": {
-    "APP_DEBUG": {
-      "required": false
+    "name": "mudmod",
+    "scripts": {
+        "postdeploy": "php artisan postdeploy:heroku"
     },
-    "APP_ENV": {
-      "required": false
+    "stack": "heroku-16",
+    "env": {
+        "APP_DEBUG": {
+            "required": false
+        },
+        "APP_ENV": {
+            "required": false
+        },
+        "APP_KEY": {
+            "required": true
+        },
+        "APP_URL": {
+            "required": true
+        },
+        "ENGAGESPARK_API_KEY": {
+            "required": true
+        },
+        "ENGAGESPARK_ORGANIZATION_ID": {
+            "required": true
+        },
+        "ENGAGESPARK_SENDER_ID": {
+            "required": true
+        },
+        "SEND_NOTIFICATION": {
+            "required": true
+        }
     },
-    "APP_KEY": {
-      "required": true
+    "formation": {
+        "web": {
+            "quantity": 1,
+            "size": "hobby"
+        }
     },
-    "APP_URL": {
-      "required": true
-    }
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "hobby"
-    }
-  },
-  "addons": [
-    "heroku-postgresql:hobby-dev"
-  ],
-  "buildpacks": [
-    {
-      "url": "heroku/php"
-    },
-    {
-      "url": "heroku/nodejs"
-    }
-  ]
+    "addons": [
+        "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [
+        {
+            "url": "heroku/php"
+        },
+        {
+            "url": "heroku/nodejs"
+        }
+    ]
 }

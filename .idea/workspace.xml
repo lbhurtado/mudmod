@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7350dbc-9d68-4cde-a127-1f7c095e012c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/mudmod.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mudmod.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,6 +182,8 @@
       <path value="$PROJECT_DIR$/vendor/facade/ignition" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/vendor/akaunting/setting" />
+      <path value="$PROJECT_DIR$/vendor/gh640/phpunit-tap" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kfcRLtvrF6vXSiOuusIIqIbxSp" />
@@ -223,7 +230,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606095077966</updated>
       <workItem from="1606095079756" duration="7512000" />
-      <workItem from="1606143603489" duration="45186000" />
+      <workItem from="1606143603489" duration="46281000" />
     </task>
     <servers />
   </component>
@@ -274,9 +281,9 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1606095159114" />
-    <state x="561" y="272" width="670" height="676" key="search.everywhere.popup" timestamp="1606403914582">
+    <state x="561" y="272" width="670" height="676" key="search.everywhere.popup" timestamp="1606469257762">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="272" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1606403914582" />
+    <state x="561" y="272" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1606469257762" />
   </component>
 </project>

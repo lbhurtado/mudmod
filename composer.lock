@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d1150039aeade449f9d3dc51fbe882b",
+    "content-hash": "cb67b495a99f9874aadd86676d21ee13",
     "packages": [
         {
             "name": "akaunting/setting",
@@ -7490,6 +7490,55 @@
             "time": "2020-11-01T12:00:00+00:00"
         },
         {
+            "name": "gh640/phpunit-tap",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gh640/phpunit-tap.git",
+                "reference": "1b69e6ac7fd5321c47576a2a9d1acdf2a0969bc4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gh640/phpunit-tap/zipball/1b69e6ac7fd5321c47576a2a9d1acdf2a0969bc4",
+                "reference": "1b69e6ac7fd5321c47576a2a9d1acdf2a0969bc4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.3",
+                "phpunit/phpunit": "^9.0",
+                "symfony/yaml": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "gh640\\PhpunitTap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Goto Hayato",
+                    "email": "habita.gh@gmail.com"
+                }
+            ],
+            "description": "Provides a TAP result printer for PHPUnit.",
+            "homepage": "https://github.com/gh640/phpunit-tap",
+            "keywords": [
+                "phpunit",
+                "phpunit reporter",
+                "tap",
+                "test"
+            ],
+            "support": {
+                "issues": "https://github.com/gh640/phpunit-tap/issues",
+                "source": "https://github.com/gh640/phpunit-tap/tree/5.0.0"
+            },
+            "time": "2020-03-05T01:13:54+00:00"
+        },
+        {
             "name": "hamcrest/hamcrest-php",
             "version": "v2.0.1",
             "source": {
@@ -9478,6 +9527,81 @@
                 }
             ],
             "time": "2020-09-28T06:39:44+00:00"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v5.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "f284e032c3cefefb9943792132251b79a6127ca6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/f284e032c3cefefb9943792132251b79a6127ca6",
+                "reference": "f284e032c3cefefb9943792132251b79a6127ca6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1",
+                "symfony/polyfill-ctype": "~1.8"
+            },
+            "conflict": {
+                "symfony/console": "<4.4"
+            },
+            "require-dev": {
+                "symfony/console": "^4.4|^5.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
+            "bin": [
+                "Resources/bin/yaml-lint"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/yaml/tree/v5.1.8"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-24T12:03:25+00:00"
         },
         {
             "name": "theseer/tokenizer",

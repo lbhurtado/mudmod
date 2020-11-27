@@ -1,50 +1,29 @@
 {
-    "name": "mudmod",
-    "scripts": {
-        "postdeploy": "php artisan postdeploy:heroku"
-    },
-    "stack": "heroku-16",
     "env": {
-        "APP_DEBUG": {
-            "required": false
-        },
-        "APP_ENV": {
-            "required": false
-        },
+        "APP_NAME": "mudmod",
+        "APP_ENV": "review",
         "APP_KEY": {
-            "required": true
+            "generator": "secret"
         },
-        "APP_URL": {
-            "required": true
-        },
-        "ENGAGESPARK_API_KEY": {
-            "required": true
-        },
-        "ENGAGESPARK_ORGANIZATION_ID": {
-            "required": true
-        },
-        "ENGAGESPARK_SENDER_ID": {
-            "required": true
-        },
-        "SEND_NOTIFICATION": {
-            "required": true
+        "APP_DEBUG": "true",
+        "LOG_CHANNEL": "errorlog",
+        "DB_CONNECTION": "pgsql",
+        "CACHE_DRIVER": "file",
+        "QUEUE_CONNECTION": "sync",
+        "SESSION_DRIVER": "database"
+    },
+    "environments": {
+        "test": {
+            "scripts": {
+                "test-setup": "php artisan migrate --seed",
+                "test": "vendor/bin/phpunit --printer gh640\\\\PhpunitTap\\\\TapResultPrinter"
+            }
         }
     },
-    "formation": {
-        "web": {
-            "quantity": 1,
-            "size": "hobby"
-        }
-    },
-    "addons": [
-        "heroku-postgresql:hobby-dev"
-    ],
-    "buildpacks": [
-        {
-            "url": "heroku/php"
-        },
-        {
-            "url": "heroku/nodejs"
-        }
-    ]
+    "scripts": {
+        "postdeploy": [
+            "php artisan db:seed",
+            "php artisan passport:client --personal"
+        ]
+    }
 }

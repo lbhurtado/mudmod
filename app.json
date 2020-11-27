@@ -26,8 +26,7 @@
     },
     "scripts": {
         "postdeploy": [
-            "php artisan db:seed",
-            "php artisan passport:client --personal"
+            "php artisan db:seed"
         ]
     }
 }

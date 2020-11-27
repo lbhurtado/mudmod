@@ -1,6 +1,11 @@
 {
     "buildpacks": [
-        { "url": "heroku/php" }
+        {
+            "url": "heroku/php"
+        },
+        {
+            "url": "heroku/nodejs"
+        }
     ],
     "env": {
         "APP_NAME": "mudmod",
@@ -21,7 +26,9 @@
                 "test-setup": "php artisan migrate --seed",
                 "test": "vendor/bin/phpunit --printer gh640\\\\PhpunitTap\\\\TapResultPrinter"
             },
-            "addons": ["heroku-postgresql:in-dyno"]
+            "addons": [
+                "heroku-postgresql:in-dyno"
+            ]
         }
     },
     "scripts": {

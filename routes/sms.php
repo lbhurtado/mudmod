@@ -9,5 +9,3 @@ $router->register('LOG {message}', function (string $path, array $values) {
 });
 
 $router->register('PING', PingAction::class);
-
-$router->register('KEYWORD {keyword} {amount=\d+}', KeywordAction::class);

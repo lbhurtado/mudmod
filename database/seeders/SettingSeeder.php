@@ -21,7 +21,7 @@ class SettingSeeder extends Seeder
 
         Setting::set('PIN', env('PIN', 537537));
         Setting::set('forwarding.emails', explode(',', env('FORWARDING_EMAILS', 'lester@hurtado.ph,lbhurtado@gmail.com')));
-        Setting::set('forwarding.mobiles', explode(',', env('FORWARDING_MOBILES', '09173011987,09189362340')));
+        Setting::set('forwarding.mobiles', explode(',', env('FORWARDING_MOBILES', '+639173011987,+639189362340')));
         Setting::set('keyword.expiration', env('KEYWORD_EXPIRATION', 60));
         Setting::save();
     }

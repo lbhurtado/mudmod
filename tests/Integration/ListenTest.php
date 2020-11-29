@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Integration;
 
 use Mockery;
 use Tests\TestCase;
@@ -15,6 +15,10 @@ class ListenTest extends TestCase
     protected $keyword = 'LISTEN';
 
     protected $tags = ['tag1', 'tag2', 'tag3'];
+
+    protected $action;
+
+    protected $router;
 
     public function setUp(): void
     {

@@ -3,9 +3,9 @@
 namespace Tests\Integration;
 
 use TypeError;
-use App\Models\Contact;
 use Tests\TestCase;
 use App\Jobs\Listen;
+use App\Models\Contact;
 use LBHurtado\Missive\Missive;
 use App\CommandBus\ListenAction;
 use LBHurtado\Missive\Models\SMS;
@@ -66,7 +66,6 @@ class ListenActionTest extends TestCase
     {
         /*** arrange ***/
         Bus::fake();
-        $sms = $this->prepareToListenAs('subscriber');
         $tags = $this->getSpaceDelimitedTags();
         $this->expectException(TypeError::class);
 
@@ -77,7 +76,7 @@ class ListenActionTest extends TestCase
         Bus::assertNotDispatched(Listen::class);
     }
 
-    protected function prepareToListenAs(string $role): \LBHurtado\Missive\Models\SMS
+    protected function prepareToListenAs(string $role): SMS
     {
         $from = '+639191234567';
         $sms = factory(SMS::class)->create(compact('from'));

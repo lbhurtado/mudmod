@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Contact;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -12,7 +13,7 @@ class Listen implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    /** @var \App\Models\Contact */
+    /** @var Contact */
     public $contact;
 
     /** @var string */
@@ -20,10 +21,10 @@ class Listen implements ShouldQueue
 
     /**
      * Listen constructor.
-     * @param \App\Models\Contact $contact
+     * @param Contact $contact
      * @param string $tags
      */
-    public function __construct(\App\Models\Contact $contact, string $tags)
+    public function __construct(Contact $contact, string $tags)
     {
         $this->contact = $contact;
         $this->tags = $tags;

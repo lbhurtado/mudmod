@@ -16,7 +16,7 @@ class Contact extends BaseContact
 
     /**
      * @param mixed ...$hashtags
-     * @return \App\Models\Contact
+     * @return Contact
      */
     public function catch(...$hashtags): Contact
     {

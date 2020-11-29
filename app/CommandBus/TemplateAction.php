@@ -3,9 +3,14 @@
 namespace App\CommandBus;
 
 use Illuminate\Support\Arr;
+use Illuminate\Http\Request;
+use Opis\Events\EventDispatcher;
 use LBHurtado\Missive\Routing\Router;
+use LBHurtado\Missive\Models\Contact;
+use LBHurtado\Missive\Classes\SMSAbstract;
 use LBHurtado\Tactician\Classes\ActionAbstract;
 use LBHurtado\Tactician\Contracts\ActionInterface;
+use Joselfonseca\LaravelTactician\CommandBusInterface;
 
 class TemplateAction extends ActionAbstract implements ActionInterface
 {
@@ -27,9 +32,9 @@ class TemplateAction extends ActionAbstract implements ActionInterface
     public function __construct(Router $router)
     {
         parent::__construct(
-            app(\Joselfonseca\LaravelTactician\CommandBusInterface::class),
-            app(\Opis\Events\EventDispatcher::class),
-            app(\Illuminate\Http\Request::class)
+            app(CommandBusInterface::class),
+            app(EventDispatcher::class),
+            app(Request::class)
         );
 
         $this->router = $router;
@@ -61,11 +66,11 @@ class TemplateAction extends ActionAbstract implements ActionInterface
 
     /**
      * @param null $permission
-     * @return \LBHurtado\Missive\Models\Contact|null
+     * @return Contact|null
      */
     protected function permittedContact($permission = null)
     {
-        $contact = $this->router->missive->getContact();
+        $contact = tap($this->router->missive->getContact(), function (Contact $contact) {});
 
         return $contact->hasPermissionTo($permission ?? $this->permission) ? $contact : null; //TODO: if null then nice message
     }
@@ -93,9 +98,9 @@ class TemplateAction extends ActionAbstract implements ActionInterface
     }
 
     /**
-     * @return \LBHurtado\Missive\Classes\SMSAbstract
+     * @return SMSAbstract
      */
-    protected function getSMS()
+    protected function getSMS(): SMSAbstract
     {
         return $this->router->missive->getSMS();
     }

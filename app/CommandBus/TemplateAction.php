@@ -12,6 +12,12 @@ use LBHurtado\Tactician\Classes\ActionAbstract;
 use LBHurtado\Tactician\Contracts\ActionInterface;
 use Joselfonseca\LaravelTactician\CommandBusInterface;
 
+/**
+ * Class TemplateAction
+ * @package App\CommandBus
+ *
+ * TODO: factor this out in lbhurtado/missive
+ */
 class TemplateAction extends ActionAbstract implements ActionInterface
 {
     /** @var Router */

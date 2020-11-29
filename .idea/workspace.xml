@@ -34,7 +34,9 @@
     <list default="true" id="e7350dbc-9d68-4cde-a127-1f7c095e012c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/CommandBus/TemplateAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CommandBus/TemplateAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ListenJobTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Jobs/ListenJobTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,6 +221,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/Unit/Jobs" />
+      <recent name="$PROJECT_DIR$/tests/Unit" />
       <recent name="$PROJECT_DIR$/tests/Integration" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -242,7 +246,7 @@
       <updated>1606095077966</updated>
       <workItem from="1606095079756" duration="7512000" />
       <workItem from="1606143603489" duration="59113000" />
-      <workItem from="1606561285328" duration="13998000" />
+      <workItem from="1606561285328" duration="15793000" />
     </task>
     <servers />
   </component>
@@ -281,10 +285,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="625" y="380" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1606399598725" />
-    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser" timestamp="1606605487829">
+    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser" timestamp="1606632347964">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1606605487829" />
+    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1606632347964" />
     <state x="373" y="206" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606614794852">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>

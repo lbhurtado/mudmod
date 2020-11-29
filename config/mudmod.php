@@ -3,6 +3,7 @@
 //use App\Classes\SupportStage;
 
 return [
+    'country' => env('DEFAULT_COUNTRY',       'PH'),
 //    'relay' => [
 //        'log'       => env('RELAY_LOG',       true),
 //        'email'     => env('RELAY_EMAIL',     true),

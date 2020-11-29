@@ -16,6 +16,18 @@ class Contact extends BaseContact
     protected $guard_name = 'web';
 
     /**
+     * @param string $mobile
+     * @return Contact|null
+     */
+    public static function bearing(string $mobile):? Contact //TODO change this to by
+    {
+        $phone = phone($mobile, config('mudmod.country'))
+            ->formatE164();
+
+        return static::where('mobile', $phone)->first();
+    }
+
+    /**
      * @param mixed ...$hashtags
      * @return Contact
      */

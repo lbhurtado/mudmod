@@ -32,11 +32,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7350dbc-9d68-4cde-a127-1f7c095e012c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/Unit/ContactTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CommandBus/TemplateAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CommandBus/TemplateAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ListenJobTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Jobs/ListenJobTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Observers/ContactObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/ContactObserver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mudmod.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mudmod.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +246,7 @@
       <updated>1606095077966</updated>
       <workItem from="1606095079756" duration="7512000" />
       <workItem from="1606143603489" duration="59113000" />
-      <workItem from="1606561285328" duration="15793000" />
+      <workItem from="1606561285328" duration="20135000" />
     </task>
     <servers />
   </component>
@@ -293,25 +293,25 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="373" y="206" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606614794852" />
-    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606614854445">
+    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606650887629">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606614854445" />
+    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606650887629" />
     <state x="701" y="339" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1606276915195">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="701" y="339" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1792.1120@0.0.1792.1120" timestamp="1606276915195" />
-    <state x="701" y="272" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1606313198369">
+    <state x="701" y="272" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1606659574961">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="701" y="272" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1792.1120@0.0.1792.1120" timestamp="1606313198369" />
+    <state x="701" y="272" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1792.1120@0.0.1792.1120" timestamp="1606659574961" />
     <state x="397" y="199" key="SettingsEditor" timestamp="1606095159114">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1606095159114" />
-    <state x="561" y="272" width="954" height="676" key="search.everywhere.popup" timestamp="1606620424068">
+    <state x="561" y="272" width="954" height="676" key="search.everywhere.popup" timestamp="1606650881597">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="272" width="954" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1606620424068" />
+    <state x="561" y="272" width="954" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1606650881597" />
   </component>
 </project>

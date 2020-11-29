@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Arr;
 use Spatie\Permission\Traits\HasRoles;
 use LBHurtado\EngageSpark\Traits\HasEngageSpark;
@@ -10,7 +11,7 @@ use App\Traits\{CanMudmod, CanSegregateHashtags};
 
 class Contact extends BaseContact
 {
-    use HasRoles, HasEngageSpark, CanMudmod, CanSegregateHashtags;
+    use HasFactory, HasRoles, HasEngageSpark, CanMudmod, CanSegregateHashtags;
 
     protected $guard_name = 'web';
 

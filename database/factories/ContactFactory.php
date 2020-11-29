@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Mudmod;
+use App\Models\Contact;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class MudmodFactory extends Factory
+class ContactFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Mudmod::class;
+    protected $model = Contact::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +22,7 @@ class MudmodFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'mobile' => $this->faker->phoneNumber,
         ];
     }
 }

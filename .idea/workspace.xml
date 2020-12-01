@@ -32,43 +32,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7350dbc-9d68-4cde-a127-1f7c095e012c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/BroadcastAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/Commands/RelayCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/Handlers/RelayHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/Middlewares/CheckBroadcasterMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/Middlewares/EmailMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/Middlewares/ForwardMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/Middlewares/LogMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/Middlewares/RecordDiscussionMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/Middlewares/ReplyMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/RelayAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Contracts/CommandTicketable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Exceptions/ShouldBroadcastException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Jobs/Relay.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/Forward.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/Acknowledged.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/Arrived.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/Forwarded.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/Hashtags.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/Relayed.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Traits/HasEmail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Traits/HasOptionalMiddlewares.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/mail/forward.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/sms/arrived.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Integration/RelayActionTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/CommandBus/Commands/VoucherCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/CommandBus/Handlers/VoucherHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/CommandBus/VoucherAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/Voucher.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/vouchers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_01_104130_create_vouchers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/VoucherSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/vendor/vouchers/en/validation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Integration/VoucherActionTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/mudmod.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mudmod.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Listeners/SMSRelayEventSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/SMSRelayEventSubscriber.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/mudmod.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mudmod.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/permission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/mudmod.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/mudmod.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/sms.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/sms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ContactTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ContactTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,6 +212,7 @@
       <path value="$PROJECT_DIR$/vendor/gh640/phpunit-tap" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/vendor/nojimage/twitter-text-php" />
+      <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-vouchers" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kfcRLtvrF6vXSiOuusIIqIbxSp" />
@@ -241,7 +227,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/mail" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/Integration" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -254,13 +240,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/Integration" />
+      <recent name="$PROJECT_DIR$/app/CommandBus" />
+      <recent name="$PROJECT_DIR$/app/CommandBus/Handlers" />
+      <recent name="$PROJECT_DIR$/app/CommandBus/Commands" />
       <recent name="$PROJECT_DIR$/resources/views/mail" />
-      <recent name="$PROJECT_DIR$/app/Mail" />
-      <recent name="$PROJECT_DIR$/resources/views/sms" />
-      <recent name="$PROJECT_DIR$/app/Notifications" />
-      <recent name="$PROJECT_DIR$/app/CommandBus/Middlewares" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/tests/Integration" />
       <recent name="$PROJECT_DIR$/tests/Unit/Jobs" />
       <recent name="$PROJECT_DIR$/tests/Unit" />
@@ -289,7 +276,7 @@
       <workItem from="1606742789471" duration="145000" />
       <workItem from="1606742949562" duration="444000" />
       <workItem from="1606743711006" duration="473000" />
-      <workItem from="1606744208801" duration="9324000" />
+      <workItem from="1606744208801" duration="13601000" />
     </task>
     <servers />
   </component>
@@ -356,6 +343,18 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="701" y="272" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1792.1120@0.0.1792.1120" timestamp="1606659574961" />
+    <state x="778" y="488" key="Create Database Seeder" timestamp="1606791077915">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="778" y="488" key="Create Database Seeder/0.0.1792.1120@0.0.1792.1120" timestamp="1606791077915" />
+    <state x="778" y="488" key="Create Model" timestamp="1606791215091">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="778" y="488" key="Create Model/0.0.1792.1120@0.0.1792.1120" timestamp="1606791215091" />
+    <state x="736" y="445" key="Create Notification" timestamp="1606791657480">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="736" y="445" key="Create Notification/0.0.1792.1120@0.0.1792.1120" timestamp="1606791657480" />
     <state x="13" y="198" width="1636" height="728" key="SettingsEditor" timestamp="1606786495050">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>

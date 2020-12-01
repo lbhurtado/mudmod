@@ -23,12 +23,12 @@ return [
         'forwarder'  => ['issue command'],
         'supporter'  => ['issue command'],
     ],
-//    'vouchers' => [
-//        'spokesman'  => env('SPOKESMAN_VOUCHERS',1),
-//        'listener'   => env('LISTENER_VOUCHERS', 5),
-//        'forwarder'  => env('FORWARDER_VOUCHERS',2),
-//        'supporter'  => env('SUPPORTER_VOUCHERS',5),
-//    ],
+    'vouchers' => [
+        'spokesman'  => env('SPOKESMAN_VOUCHERS',1),
+        'listener'   => env('LISTENER_VOUCHERS', 5),
+        'forwarder'  => env('FORWARDER_VOUCHERS',2),
+        'supporter'  => env('SUPPORTER_VOUCHERS',5),
+    ],
     'signature' => env('SIGNATURE', 'mudmod'),
 //    'credits' => [
 //        'initial' => [

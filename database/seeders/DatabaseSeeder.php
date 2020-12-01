@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AirtimeSeeder::class);
         $this->call(SettingSeeder::class);
         $this->call(RoleSeeder::class);
-        $this->call(ContactSeeder::class);
+        $this->call(VoucherSeeder::class);
+//        $this->call(ContactSeeder::class);
     }
 }

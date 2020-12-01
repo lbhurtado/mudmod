@@ -15,3 +15,8 @@ Backend software for Mudmod System
 * Auto-Credit Tag
     * Load Credits
     * bCode Integration
+    
+## Usage
+* Generate Vouchers
+    * send VOUCHER <PIN>
+    

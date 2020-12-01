@@ -7,7 +7,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use App\Events\{SMSRelayEvent, SMSRelayEvents};
-use App\Notifications\{Listened, Relayed};
+use App\Notifications\{Redeemed, Listened, Relayed};
 //use App\Notifications\{Redeemed, Listened, Relayed, Unlistened, Credited};
 
 class SMSRelayEventSubscriber implements ShouldQueue
@@ -21,14 +21,14 @@ class SMSRelayEventSubscriber implements ShouldQueue
         });
     }
 
-//    public function onSMSRelayRedeemed(SMSRelayEvent $event)
-//    {
-//        tap($event->getContact(), function ($contact) use ($event) {
-//            $contact->notify(new Redeemed($event->getVoucher()));
+    public function onSMSRelayRedeemed(SMSRelayEvent $event)
+    {
+        tap($event->getContact(), function ($contact) use ($event) {
+            $contact->notify(new Redeemed($event->getVoucher()));
 //            $this->dispatch(new Credit($contact, config('sms-relay.credits.initial.spokesman')));
-//        });
-//    }
-//
+        });
+    }
+
     public function onSMSRelayRelayed(SMSRelayEvent $event)
     {
         tap($event->getContact(), function ($contact) use ($event) {
@@ -57,11 +57,11 @@ class SMSRelayEventSubscriber implements ShouldQueue
             SMSRelayEventSubscriber::class.'@onSMSRelayListened'
         );
 
-//        $events->listen(
-//            SMSRelayEvents::REDEEMED,
-//            SMSRelayEventSubscriber::class.'@onSMSRelayRedeemed'
-//        );
-//
+        $events->listen(
+            SMSRelayEvents::REDEEMED,
+            SMSRelayEventSubscriber::class.'@onSMSRelayRedeemed'
+        );
+
         $events->listen(
             SMSRelayEvents::RELAYED,
             SMSRelayEventSubscriber::class.'@onSMSRelayRelayed'

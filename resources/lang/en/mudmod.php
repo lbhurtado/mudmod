@@ -6,6 +6,7 @@ return [
         'message' => "Keyword: :keyword\nAmount: :amount"
         ],
     'voucher' => "Vouchers::handle,\n :message \n- :signature",
+    'redeem' => "Redeemed::handle,\n :message \n- :signature",
     'listen' => "Listened: :handle,\n :message \n- :signature",
     'relay' => "Relayed: :handle,\n :message \n- :signature",
 ];

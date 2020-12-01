@@ -5,7 +5,7 @@ namespace App\Events;
 use App\Models\Contact;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
-//use BeyondCode\Vouchers\Models\Voucher;
+use BeyondCode\Vouchers\Models\Voucher;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -22,8 +22,8 @@ class SMSRelayEvent
     /** @var array */
     protected $hashtags;
 
-//    /** @var Voucher */
-//    protected $voucher;
+    /** @var Voucher */
+    protected $voucher;
 
     /** @var string */
     protected $message;
@@ -40,24 +40,24 @@ class SMSRelayEvent
         $this->contact = $contact;
     }
 
-//    /**
-//     * @return Voucher
-//     */
-//    public function getVoucher(): Voucher
-//    {
-//        return $this->voucher;
-//    }
-//
-//    /**
-//     * @param Voucher $voucher
-//     * @return SMSRelayEvent
-//     */
-//    public function setVoucher(Voucher $voucher): self
-//    {
-//        $this->voucher = $voucher;
-//
-//        return $this;
-//    }
+    /**
+     * @return Voucher
+     */
+    public function getVoucher(): Voucher
+    {
+        return $this->voucher;
+    }
+
+    /**
+     * @param Voucher $voucher
+     * @return SMSRelayEvent
+     */
+    public function setVoucher(Voucher $voucher): self
+    {
+        $this->voucher = $voucher;
+
+        return $this;
+    }
 
     /**
      * @return array

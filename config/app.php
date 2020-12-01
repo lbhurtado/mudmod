@@ -229,7 +229,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Vouchers' => \BeyondCode\Vouchers\Facades\Vouchers::class
     ],
 
     'key' => strpos(env('APP_KEY'), 'base64:') !== false ? env('APP_KEY') : substr(env('APP_KEY'), 0, 32),

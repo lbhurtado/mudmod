@@ -1,9 +1,8 @@
 <?php
 
-use App\CommandBus\{PingAction, ListenAction, VoucherAction};
+use App\CommandBus\{VoucherAction, RedeemAction};
 
-$router = resolve('missive:router');
+$router = resolve('missive:router'); $regex_code = ''; $regex_email = ''; extract(redeem_regex());
 
-$router->register('PING', PingAction::class);
-$router->register('LISTEN {tags}', ListenAction::class);
 $router->register("VOUCHER {pin}", VoucherAction::class);
+$router->register("{code={$regex_code}} {email={$regex_email}}", RedeemAction::class);

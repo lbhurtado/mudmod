@@ -7,7 +7,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use App\Events\{SMSRelayEvent, SMSRelayEvents};
-use App\Notifications\Listened;
+use App\Notifications\{Listened, Relayed};
 //use App\Notifications\{Redeemed, Listened, Relayed, Unlistened, Credited};
 
 class SMSRelayEventSubscriber implements ShouldQueue
@@ -29,12 +29,12 @@ class SMSRelayEventSubscriber implements ShouldQueue
 //        });
 //    }
 //
-//    public function onSMSRelayRelayed(SMSRelayEvent $event)
-//    {
-//        tap($event->getContact(), function ($contact) use ($event) {
-//            $contact->notify(new Relayed($event->getMessage()));
-//        });
-//    }
+    public function onSMSRelayRelayed(SMSRelayEvent $event)
+    {
+        tap($event->getContact(), function ($contact) use ($event) {
+            $contact->notify(new Relayed($event->getMessage()));
+        });
+    }
 //
 //    public function onSMSRelayUnlistened(SMSRelayEvent $event)
 //    {
@@ -62,10 +62,10 @@ class SMSRelayEventSubscriber implements ShouldQueue
 //            SMSRelayEventSubscriber::class.'@onSMSRelayRedeemed'
 //        );
 //
-//        $events->listen(
-//            SMSRelayEvents::RELAYED,
-//            SMSRelayEventSubscriber::class.'@onSMSRelayRelayed'
-//        );
+        $events->listen(
+            SMSRelayEvents::RELAYED,
+            SMSRelayEventSubscriber::class.'@onSMSRelayRelayed'
+        );
 //
 //        $events->listen(
 //            SMSRelayEvents::UNLISTENED,

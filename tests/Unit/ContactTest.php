@@ -55,7 +55,6 @@ class ContactTest extends TestCase
         $contact = Contact::bearing($mobile);
 
         /*** assert ***/
-//        dd(Contact::first());
         $this->assertTrue($this->contact->is($contact));
     }
 }

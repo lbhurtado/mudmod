@@ -1,6 +1,6 @@
 <?php
 
-use App\CommandBus\{PingAction, ListenAction};
+use App\CommandBus\{PingAction, ListenAction, RelayAction};
 
 $router = resolve('missive:router');
 

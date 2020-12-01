@@ -3,15 +3,15 @@
 //use App\Classes\SupportStage;
 
 return [
-    'country' => env('DEFAULT_COUNTRY',       'PH'),
-//    'relay' => [
-//        'log'       => env('RELAY_LOG',       true),
-//        'email'     => env('RELAY_EMAIL',     true),
-//        'mobile'    => env('RELAY_MOBILE',    true),
-//        'reply'     => env('RELAY_REPLY',     true),
-//        'hashtags'  => env('RELAY_HASHTAGS',  true),
-//        'converse'  => env('RELAY_CONVERSE',  true),
-//    ],
+    'country' => env('DEFAULT_COUNTRY','PH'),
+    'relay' => [
+        'log'       => env('RELAY_LOG',       true),
+        'email'     => env('RELAY_EMAIL',     true),
+        'mobile'    => env('RELAY_MOBILE',    true),
+        'reply'     => env('RELAY_REPLY',     true),
+        'hashtags'  => env('RELAY_HASHTAGS',  true),
+        'converse'  => env('RELAY_CONVERSE',  true),
+    ],
 //    'broadcast' => [
 //        'keyword'   => 'BROADCAST',
 //        'optional'  => env('BROADCAST_OPTIONAL', true),
@@ -29,7 +29,7 @@ return [
 //        'forwarder'  => env('FORWARDER_VOUCHERS',2),
 //        'supporter'  => env('SUPPORTER_VOUCHERS',5),
 //    ],
-    'signature' => env('SIGNATURE', 'Mudmod'),
+    'signature' => env('SIGNATURE', 'mudmod'),
 //    'credits' => [
 //        'initial' => [
 //            'spokesman' => env('SPOKESMAN_CREDIT', 10),

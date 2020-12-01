@@ -21,6 +21,7 @@
         "lbhurtado/missive": "^2.0",
         "lbhurtado/sms": "^2.0.2",
         "livewire/livewire": "^2.0",
+        "nojimage/twitter-text-php": "^3.1",
         "spatie/laravel-permission": "^3.17"
     },
     "require-dev": {

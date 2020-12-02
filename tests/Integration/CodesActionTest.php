@@ -5,15 +5,15 @@ namespace Tests\Integration;
 use Setting;
 use Tests\TestCase;
 use App\Models\Contact;
-use App\Notifications\Voucher;
+use App\Notifications\Codes;
 use LBHurtado\Missive\Missive;
-use App\CommandBus\VoucherAction;
+use App\CommandBus\CodesAction;
 use LBHurtado\Missive\Models\SMS;
 use LBHurtado\Missive\Routing\Router;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class VoucherActionTest extends TestCase
+class CodesActionTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -34,10 +34,10 @@ class VoucherActionTest extends TestCase
         $pin = Setting::get('PIN');
 
         /*** act ***/
-        app(VoucherAction::class)->__invoke('', compact('pin'));
+        app(CodesAction::class)->__invoke('', compact('pin'));
 
         /*** assert ***/
-        Notification::assertSentTo($sms->origin, Voucher::class);
+        Notification::assertSentTo($sms->origin, Codes::class);
     }
 
     /** @test */
@@ -49,10 +49,10 @@ class VoucherActionTest extends TestCase
         $pin = $this->faker->numberBetween(100, 999);
 
         /*** act ***/
-        app(VoucherAction::class)->__invoke('', compact('pin'));
+        app(CodesAction::class)->__invoke('', compact('pin'));
 
         /*** assert ***/
-        Notification::assertNotSentTo($sms->origin, Voucher::class);
+        Notification::assertNotSentTo($sms->origin, Codes::class);
     }
 
     protected function prepareToRetrieveVoucherAs(string $role): SMS

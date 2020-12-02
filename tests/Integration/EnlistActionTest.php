@@ -3,16 +3,16 @@
 namespace Tests\Integration;
 
 use Tests\TestCase;
-use App\Jobs\Redeem;
+use App\Jobs\Enlist;
 use App\Models\Contact;
 use LBHurtado\Missive\Missive;
-use App\CommandBus\RedeemAction;
+use App\CommandBus\EnlistAction;
 use LBHurtado\Missive\Models\SMS;
 use Illuminate\Support\Facades\Bus;
 use LBHurtado\Missive\Routing\Router;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class RedeemActionTest extends TestCase
+class EnlistActionTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -30,14 +30,14 @@ class RedeemActionTest extends TestCase
         Bus::fake();
         $sms = $this->prepareToRedeemAs('subscriber');
         $code = $this->faker->word;
-        $email = $this->faker->email;
+        $name = $this->faker->name;
 
         /*** act ***/
-        app(RedeemAction::class)('REDEEM', compact('code', 'email'));
+        app(EnlistAction::class)('ENLIST', compact('code', 'name'));
 
         /*** assert ***/
-        Bus::assertDispatched(Redeem::class, function ($job) use ($sms, $code, $email) {
-            return $job->contact === $sms->origin && $job->code == $code && $job->email == $email;
+        Bus::assertDispatched(Enlist::class, function ($job) use ($sms, $code, $name) {
+            return $job->contact === $sms->origin && $job->code == $code && $job->name == $name;
         });
     }
 

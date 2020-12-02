@@ -5,7 +5,7 @@ namespace App\CommandBus;
 use App\CommandBus\Commands\VoucherCommand;
 use App\CommandBus\Handlers\VoucherHandler;
 
-class VoucherAction extends TemplateAction
+class CodesAction extends TemplateAction
 {
     protected $permission = 'send message';
 

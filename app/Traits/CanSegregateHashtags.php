@@ -12,11 +12,11 @@ trait CanSegregateHashtags
         return $this->hasMany(Hashtag::class);
     }
 
-    public function catchHashtags(array $hashtags)
+    public function catchHashtags(array $hashtags, int $amount = 0)
     {
         $tags = [];
         foreach ($hashtags as $tag) {
-            $tags[] = ['tag' => $tag];
+            $tags[] = ['tag' => $tag, 'extra_attributes' => ['amount' => $amount]];
         }
         $this->hashtags()->createMany($tags);
         event(SMSRelayEvents::LISTENED, (new SMSRelayEvent($this))->setHashtags($hashtags));

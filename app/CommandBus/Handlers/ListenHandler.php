@@ -16,7 +16,7 @@ class ListenHandler
     public function handle(ListenCommand $command)
     {
         tap($command->origin, function ($contact) use ($command) {
-            $this->dispatch(new Listen($contact, $command->tags));
+            $this->dispatch(new Listen($contact, $command->tags, $command->amount));
         });
     }
 }

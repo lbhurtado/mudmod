@@ -34,11 +34,10 @@ Backend software for Mudmod System
 * Permission - [x]
 * Setting - [x]
 * Contact - [x]
-* Voucher
 
 ## Features Tested
 * Auto-generated Role Access Codes - [x]
-* Enlist from Access Code
+* Enlist from Access Code - [x]
 * Remote Control
     * Application Maintenance Mode
 * Analytics

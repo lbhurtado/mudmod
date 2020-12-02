@@ -17,6 +17,7 @@ class CreateHashtagsTable extends Migration
             $table->id();
             $table->integer('contact_id')->unsigned()->index();
             $table->string('tag');
+            $table->schemalessAttributes('extra_attributes');
             $table->timestamps();
             $table->foreign('contact_id')->references('id')->on('contacts')->onDelete('cascade');
         });

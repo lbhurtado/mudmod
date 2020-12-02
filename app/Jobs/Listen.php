@@ -19,15 +19,21 @@ class Listen implements ShouldQueue
     /** @var string */
     public $tags;
 
+    /** @var int */
+    public $amount;
+
     /**
      * Listen constructor.
+     *
      * @param Contact $contact
      * @param string $tags
+     * @param int $amount
      */
-    public function __construct(Contact $contact, string $tags)
+    public function __construct(Contact $contact, string $tags, int $amount)
     {
         $this->contact = $contact;
         $this->tags = $tags;
+        $this->amount = $amount;
     }
 
     /**
@@ -37,7 +43,7 @@ class Listen implements ShouldQueue
      */
     public function handle()
     {
-        $this->contact->catch($this->getHashtags($this->tags));
+        $this->contact->catch($this->amount, $this->getHashtags($this->tags));
     }
 
     /**

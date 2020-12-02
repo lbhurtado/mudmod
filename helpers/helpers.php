@@ -13,3 +13,17 @@ if (! function_exists('redeem_regex')) {
         ];
     }
 }
+
+if (! function_exists('enlist_regex')) {
+    function enlist_regex() {
+        $regex_code = '';
+        tap(config('vouchers.characters'), function ($allowed) use (&$regex_code) {
+            $regex_code = "([{$allowed}]{4})-([{$allowed}]{4})";
+        });
+
+        return [
+            'regex_code' => $regex_code,
+            'regex_name' => ".*"
+        ];
+    }
+}

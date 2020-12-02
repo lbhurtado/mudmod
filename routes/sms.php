@@ -1,8 +1,11 @@
 <?php
 
-use App\CommandBus\{VoucherAction, RedeemAction};
+use App\CommandBus\{CodesAction, EnlistAction};
 
-$router = resolve('missive:router'); $regex_code = ''; $regex_email = ''; extract(redeem_regex());
+$regex_code = ''; $regex_name = '';
+$router = resolve('missive:router'); extract(enlist_regex());
 
-$router->register("VOUCHER {pin}", VoucherAction::class);
-$router->register("{code={$regex_code}} {email={$regex_email}}", RedeemAction::class);
+$router->register("{pin=\d+} CODES", CodesAction::class);
+
+
+$router->register("{code={$regex_code}} {name={$regex_name}}", EnlistAction::class);

@@ -2,21 +2,52 @@
 Backend software for Mudmod System
 
 ## Features
-* Headless
-* Generates Keyword
-    * Expiration
-    * Auto-Expire
-    * Custom Message
-    * Custom Destination Mobile
-* Opt-in
-    * Auto-Response
-* bCode Generation
-* KusingPH Auto-Registration
-* Auto-Credit Tag
-    * Load Credits
-    * bCode Integration
-    
-## Usage
-* Generate Vouchers
-    * send VOUCHER <PIN>
-    
+* Multiple Roles
+    * Admin
+        * issue command
+            * ENABLE | DISABLE \<PIN\>
+            * PING
+            * COUNT
+        * send message
+            * \<PIN\> CODES
+        * broadcast message
+            * @ALL \<message\>
+            * @GROUP1 \<message\>
+    * Agent
+        * send message
+            * \<code\> \<name\>
+        * issue command
+            * GC \<amount\> \<code\>
+            * INSTRUCTION | INST <\message\>
+            * GO | START | STOP | | HALT | EXTEND | MORE
+    * Cashier
+        * issue command
+            * CREDIT \<amount\> \<mobile\> \<PIN\>
+    * Subscriber
+        * send message
+            * \<code\> \<name\>
+            * \#B-CODE | \#BCODE | \#CODE
+            * \<message\>
+            
+## Units Tested
+* Role - [x]
+* Permission - [x]
+* Setting - [x]
+* Contact - [x]
+* Voucher
+
+## Features Tested
+* Auto-generated Role Access Codes - [x]
+* Enlist from Access Code
+* Remote Control
+    * Application Maintenance Mode
+* Analytics
+* Connection Status
+* Broadcast Messages
+* On-Demand Generation of GC
+* On-Demand Drafting of GC Instructions
+* On-Demand START-STOP of GC Redemption
+* Registration via GC Code & Name
+* Auto-generated B-Code
+* On-Demand B-Code Request
+* Messaging to Upline

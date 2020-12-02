@@ -7,12 +7,19 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use App\Events\{SMSRelayEvent, SMSRelayEvents};
-use App\Notifications\{Redeemed, Listened, Relayed};
+use App\Notifications\{Enlisted, Listened, Relayed};
 //use App\Notifications\{Redeemed, Listened, Relayed, Unlistened, Credited};
 
 class SMSRelayEventSubscriber implements ShouldQueue
 {
     use InteractsWithQueue, DispatchesJobs;
+
+    public function onSMSRelayEnlisted(SMSRelayEvent $event)
+    {
+        tap($event->getContact(), function ($contact) use ($event) {
+            $contact->notify(new Enlisted($event->getVoucher())); //TODO: Create Notification
+        });
+    }
 
     public function onSMSRelayListened(SMSRelayEvent $event)
     {
@@ -21,13 +28,13 @@ class SMSRelayEventSubscriber implements ShouldQueue
         });
     }
 
-    public function onSMSRelayRedeemed(SMSRelayEvent $event)
-    {
-        tap($event->getContact(), function ($contact) use ($event) {
-            $contact->notify(new Redeemed($event->getVoucher()));
-//            $this->dispatch(new Credit($contact, config('sms-relay.credits.initial.spokesman')));
-        });
-    }
+//    public function onSMSRelayRedeemed(SMSRelayEvent $event)
+//    {
+//        tap($event->getContact(), function ($contact) use ($event) {
+//            $contact->notify(new Redeemed($event->getVoucher()));
+////            $this->dispatch(new Credit($contact, config('sms-relay.credits.initial.spokesman')));
+//        });
+//    }
 
     public function onSMSRelayRelayed(SMSRelayEvent $event)
     {
@@ -53,14 +60,19 @@ class SMSRelayEventSubscriber implements ShouldQueue
     public function subscribe($events)
     {
         $events->listen(
+            SMSRelayEvents::ENLISTED,
+            SMSRelayEventSubscriber::class.'@onSMSRelayEnlisted'
+        );
+
+        $events->listen(
             SMSRelayEvents::LISTENED,
             SMSRelayEventSubscriber::class.'@onSMSRelayListened'
         );
 
-        $events->listen(
-            SMSRelayEvents::REDEEMED,
-            SMSRelayEventSubscriber::class.'@onSMSRelayRedeemed'
-        );
+//        $events->listen(
+//            SMSRelayEvents::REDEEMED,
+//            SMSRelayEventSubscriber::class.'@onSMSRelayRedeemed'
+//        );
 
         $events->listen(
             SMSRelayEvents::RELAYED,

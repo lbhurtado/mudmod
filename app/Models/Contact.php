@@ -7,11 +7,11 @@ use Spatie\Permission\Traits\HasRoles;
 use LBHurtado\EngageSpark\Traits\HasEngageSpark;
 use LBHurtado\Missive\Models\Contact as BaseContact;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use App\Traits\{CanRedeemVouchers, CanSegregateHashtags, HasEmail};
+use App\Traits\{CanRedeemVouchers, CanAllocate, CanSegregateHashtags, HasEmail};
 
 class Contact extends BaseContact
 {
-    use HasFactory, HasRoles, CanRedeemVouchers, HasEngageSpark, CanSegregateHashtags, HasEmail;
+    use HasFactory, HasRoles, CanRedeemVouchers, HasEngageSpark, CanAllocate, CanSegregateHashtags, HasEmail;
 
     protected $guard_name = 'web';
 

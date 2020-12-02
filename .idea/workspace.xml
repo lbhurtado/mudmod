@@ -32,17 +32,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7350dbc-9d68-4cde-a127-1f7c095e012c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/CommandBus/AllocateAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/CommandBus/Commands/AllocateCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/CommandBus/Handlers/AllocateHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Jobs/Allocate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Allocation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/Allocated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Traits/CanAllocate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/AllocationFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_02_194033_create_allocations_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/AllocationSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CommandBus/Commands/ListenCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CommandBus/Commands/ListenCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CommandBus/Handlers/ListenHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CommandBus/Handlers/ListenHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CommandBus/PingAction.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CommandBus/VoucherAction.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Jobs/Listen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/Listen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Events/SMSRelayEvents.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Events/SMSRelayEvents.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/SMSRelayEventSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/SMSRelayEventSubscriber.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Hashtag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Hashtag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/CanSegregateHashtags.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/CanSegregateHashtags.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_28_221939_create_hashtags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_28_221939_create_hashtags_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/mudmod.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/mudmod.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/sms.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/sms.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -266,7 +270,7 @@
       <workItem from="1606742789471" duration="145000" />
       <workItem from="1606742949562" duration="444000" />
       <workItem from="1606743711006" duration="473000" />
-      <workItem from="1606744208801" duration="45066000" />
+      <workItem from="1606744208801" duration="51438000" />
     </task>
     <servers />
   </component>
@@ -313,18 +317,18 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="625" y="380" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1606399598725" />
-    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser" timestamp="1606886587885">
+    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser" timestamp="1606921788546">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1606886587885" />
+    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1606921788546" />
     <state x="373" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606878885063">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="373" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606878885063" />
-    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606830155385">
+    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606921761150">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606830155385" />
+    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606921761150" />
     <state x="701" y="339" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1606276915195">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -333,6 +337,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="701" y="272" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1792.1120@0.0.1792.1120" timestamp="1606659574961" />
+    <state x="778" y="428" key="Create Database Migration" timestamp="1606909162778">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="778" y="428" key="Create Database Migration/0.0.1792.1120@0.0.1792.1120" timestamp="1606909162778" />
     <state x="778" y="488" key="Create Database Seeder" timestamp="1606791077915">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -345,18 +353,18 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="757" y="474" key="Create Feature Test/0.0.1792.1120@0.0.1792.1120" timestamp="1606878597558" />
-    <state x="778" y="488" key="Create Job" timestamp="1606841190739">
+    <state x="778" y="488" key="Create Job" timestamp="1606917219862">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="778" y="488" key="Create Job/0.0.1792.1120@0.0.1792.1120" timestamp="1606841190739" />
-    <state x="778" y="488" key="Create Model" timestamp="1606791215091">
+    <state x="778" y="488" key="Create Job/0.0.1792.1120@0.0.1792.1120" timestamp="1606917219862" />
+    <state x="778" y="488" key="Create Model" timestamp="1606909131509">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="778" y="488" key="Create Model/0.0.1792.1120@0.0.1792.1120" timestamp="1606791215091" />
-    <state x="736" y="445" key="Create Notification" timestamp="1606865555534">
+    <state x="778" y="488" key="Create Model/0.0.1792.1120@0.0.1792.1120" timestamp="1606909131509" />
+    <state x="736" y="445" key="Create Notification" timestamp="1606920437798">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="736" y="445" key="Create Notification/0.0.1792.1120@0.0.1792.1120" timestamp="1606865555534" />
+    <state x="736" y="445" key="Create Notification/0.0.1792.1120@0.0.1792.1120" timestamp="1606920437798" />
     <state x="768" y="488" key="Create Unit Test" timestamp="1606832911210">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>

@@ -7,7 +7,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use App\Events\{SMSRelayEvent, SMSRelayEvents};
-use App\Notifications\{Enlisted, Listened, Relayed};
+use App\Notifications\{Enlisted, Allocated, Listened, Relayed};
 //use App\Notifications\{Redeemed, Listened, Relayed, Unlistened, Credited};
 
 class SMSRelayEventSubscriber implements ShouldQueue
@@ -18,6 +18,13 @@ class SMSRelayEventSubscriber implements ShouldQueue
     {
         tap($event->getContact(), function ($contact) use ($event) {
             $contact->notify(new Enlisted($event->getVoucher())); //TODO: Create Notification
+        });
+    }
+
+    public function onSMSRelayAllocated(SMSRelayEvent $event)
+    {
+        tap($event->getContact(), function ($contact) use ($event) {
+            $contact->notify(new Allocated($event->getTags()));
         });
     }
 
@@ -62,6 +69,11 @@ class SMSRelayEventSubscriber implements ShouldQueue
         $events->listen(
             SMSRelayEvents::ENLISTED,
             SMSRelayEventSubscriber::class.'@onSMSRelayEnlisted'
+        );
+
+        $events->listen(
+            SMSRelayEvents::ALLOCATED,
+            SMSRelayEventSubscriber::class.'@onSMSRelayAllocated'
         );
 
         $events->listen(

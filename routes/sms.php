@@ -7,7 +7,7 @@ use App\CommandBus\{CodesAction, EnlistAction, RationAction, RelayAction};
 $regex_code = ''; $regex_name = '';
 $router = resolve('missive:router'); extract(enlist_regex());
 
-tap(implode('|', Voucher::where('model_type', Ration::class)->pluck('code')->toarray()), function ($codes) use ($router) {
+optional(implode('|', Voucher::where('model_type', Ration::class)->pluck('code')->toarray()), function ($codes) use ($router) {
     $router->register("#{code={$codes}} {name}", RelayAction::class);
 });
 

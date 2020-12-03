@@ -6,10 +6,12 @@ use App\CommandBus\{CodesAction, EnlistAction, RationAction, RelayAction};
 
 $regex_code = ''; $regex_name = '';
 $router = resolve('missive:router'); extract(enlist_regex());
+if (Schema::hasTable('voucher')) {
+    optional(implode('|', Voucher::where('model_type', Ration::class)->pluck('code')->toarray()), function ($codes) use ($router) {
+        $router->register("#{code={$codes}} {name}", RelayAction::class);
+    });
+}
 
-optional(implode('|', Voucher::where('model_type', Ration::class)->pluck('code')->toarray()), function ($codes) use ($router) {
-    $router->register("#{code={$codes}} {name}", RelayAction::class);
-});
 
 $router->register('{message}', RelayAction::class);
 $router->register("{pin=\d+} CODES", CodesAction::class);

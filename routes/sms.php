@@ -9,7 +9,8 @@ $router = resolve('missive:router'); extract(enlist_regex());
 $router->register("{pin=\d+} CODES", CodesAction::class);
 $router->register("LISTEN {amount=\d+} {tags}", ListenAction::class); //TODO: remove this
 
-tap(implode('|', Ration::pluck('code')->toArray()), function ($codes) use ($router) {
+parse_str(config('mudmod.rations.default'), $rations); //TODO: check in DB as well
+tap(implode('|', array_keys($rations)), function ($codes) use ($router) {
     $router->register("RATION {code={$codes}} {tags}", RationAction::class);//TODO: Add testing for Ration
 });
 

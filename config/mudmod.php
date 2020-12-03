@@ -22,5 +22,8 @@ return [
         'cashier'    => env('CASHIER_VOUCHERS',     5),
         'subscriber' => env('SUBSCRIBER_VOUCHERS',  5),
     ],
+    'rations' => [
+        'default' => env('DEFAULT_RATIONS',  'MIN=100&LOW=200&MID=300&GEN=400&MAX=500'),
+    ],
     'signature' => env('SIGNATURE', 'mudmod'),
 ];

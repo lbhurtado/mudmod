@@ -1,13 +1,18 @@
 <?php
 
 use App\Models\Ration;
-use App\CommandBus\{CodesAction, EnlistAction, RationAction, ListenAction};
+use BeyondCode\Vouchers\Models\Voucher;
+use App\CommandBus\{CodesAction, EnlistAction, RationAction, RelayAction};
 
 $regex_code = ''; $regex_name = '';
 $router = resolve('missive:router'); extract(enlist_regex());
 
+tap(implode('|', Voucher::where('model_type', Ration::class)->pluck('code')->toarray()), function ($codes) use ($router) {
+    $router->register("#{code={$codes}} {name}", RelayAction::class);
+});
+
+$router->register('{message}', RelayAction::class);
 $router->register("{pin=\d+} CODES", CodesAction::class);
-$router->register("LISTEN {amount=\d+} {tags}", ListenAction::class); //TODO: remove this
 
 parse_str(config('mudmod.rations.default'), $rations); //TODO: check in DB as well
 tap(implode('|', array_keys($rations)), function ($codes) use ($router) {

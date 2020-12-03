@@ -26,11 +26,4 @@ class RelayCommand extends BaseCommand implements CommandTicketable
     {
         return $this->sms;
     }
-
-//    public function getTicket()
-//    {
-//        return $this->sms->origin->tickets->last();
-//    }
-
-
 }

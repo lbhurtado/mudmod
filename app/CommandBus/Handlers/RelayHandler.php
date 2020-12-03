@@ -9,6 +9,7 @@ use App\Notifications\Hashtags;
 use App\CommandBus\Commands\RelayCommand;
 use Illuminate\Support\Facades\Notification;
 use App\Events\{SMSRelayEvents, SMSRelayEvent};
+use BeyondCode\Vouchers\Exceptions\VoucherAlreadyRedeemed;
 
 class RelayHandler
 {
@@ -32,9 +33,12 @@ class RelayHandler
     public function handle(RelayCommand $command)
     {
         foreach ($this->getHashtags($command) as $hashtag) {
-            optional($this->getContacts($hashtag), function ($contacts) use ($command) {
-                Notification::send($contacts, new Hashtags($command->sms));
-            });
+            try {
+                $command->sms->origin->redeemCode($hashtag);
+            }
+            catch (VoucherAlreadyRedeemed $e) {
+
+            }
         };
 //        event(SMSRelayEvents::RELAYED, (new SMSRelayEvent($command->sms->origin))->setMessage($command->sms->getMessage()));
     }

@@ -4,28 +4,28 @@ namespace App\CommandBus\Commands;
 
 use App\Models\Contact;
 
-class AllocateCommand extends BaseCommand
+class RationCommand extends BaseCommand
 {
     /** @var Contact */
     public $origin;
 
-    /** @var int */
-    public $amount;
+    /** @var string */
+    public $code;
 
     /** @var string */
     public $tags;
 
     /**
-     * ListenCommand constructor.
+     * RationCommand constructor.
      *
      * @param Contact $origin
-     * @param int $amount
+     * @param string $code i.e. MIN, LOW, MID, GEN, MAX
      * @param string $tags i.e. space delimited e.g. word1 word2 word3
      */
-    public function __construct(Contact $origin, int $amount,  string $tags)
+    public function __construct(Contact $origin, string $code,  string $tags)
     {
         $this->origin = $origin;
-        $this->amount = $amount;
+        $this->code = $code;
         $this->tags = $tags;
     }
 }

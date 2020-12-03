@@ -2,13 +2,11 @@
 
 namespace App\Listeners;
 
-//use App\Jobs\Credit;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use App\Events\{SMSRelayEvent, SMSRelayEvents};
-use App\Notifications\{Enlisted, Allocated, Listened, Relayed};
-//use App\Notifications\{Redeemed, Listened, Relayed, Unlistened, Credited};
+use App\Notifications\{Enlisted, Rationed, Listened, Relayed};
 
 class SMSRelayEventSubscriber implements ShouldQueue
 {
@@ -21,10 +19,10 @@ class SMSRelayEventSubscriber implements ShouldQueue
         });
     }
 
-    public function onSMSRelayAllocated(SMSRelayEvent $event)
+    public function onSMSRelayRationed(SMSRelayEvent $event)
     {
         tap($event->getContact(), function ($contact) use ($event) {
-            $contact->notify(new Allocated($event->getTags()));
+            $contact->notify(new Rationed($event->getTags()));
         });
     }
 
@@ -72,8 +70,8 @@ class SMSRelayEventSubscriber implements ShouldQueue
         );
 
         $events->listen(
-            SMSRelayEvents::ALLOCATED,
-            SMSRelayEventSubscriber::class.'@onSMSRelayAllocated'
+            SMSRelayEvents::RATIONED,
+            SMSRelayEventSubscriber::class.'@onSMSRelayRationed'
         );
 
         $events->listen(

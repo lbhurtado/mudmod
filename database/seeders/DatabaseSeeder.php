@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Contact;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SettingSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(VoucherSeeder::class);
-//        $this->call(ContactSeeder::class);
+        $this->call(RationSeeder::class);
     }
 }

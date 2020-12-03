@@ -9,7 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-class Allocate implements ShouldQueue
+class Ration implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -19,21 +19,21 @@ class Allocate implements ShouldQueue
     /** @var string */
     public $tags;
 
-    /** @var int */
-    public $amount;
+    /** @var string */
+    public $code;
 
     /**
      * Listen constructor.
      *
      * @param Contact $contact
      * @param string $tags
-     * @param int $amount
+     * @param string $code
      */
-    public function __construct(Contact $contact, string $tags, int $amount)
+    public function __construct(Contact $contact, string $tags, string $code)
     {
         $this->contact = $contact;
         $this->tags = $tags;
-        $this->amount = $amount;
+        $this->code = $code;
     }
 
     /**
@@ -43,7 +43,7 @@ class Allocate implements ShouldQueue
      */
     public function handle()
     {
-        $this->contact->allocate($this->amount, $this->getHashtags($this->tags));
+        $this->contact->ration($this->code, $this->getHashtags($this->tags));
     }
 
     /**

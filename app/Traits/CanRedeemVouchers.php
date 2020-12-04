@@ -53,8 +53,6 @@ trait CanRedeemVouchers
             'redeemed_at' => now()
         ]);
 
-        event(SMSRelayEvents::ENLISTED, (new SMSRelayEvent($this))->setVoucher($voucher));
-
         return $voucher;
     }
 

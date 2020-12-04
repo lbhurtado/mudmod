@@ -5,7 +5,7 @@ namespace App\Notifications;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use LBHurtado\EngageSpark\Notifications\BaseNotification;
 
-class Listened extends BaseNotification implements ShouldQueue
+class Collected extends BaseNotification implements ShouldQueue
 {
     public function getContent($notifiable)
     {
@@ -17,6 +17,6 @@ class Listened extends BaseNotification implements ShouldQueue
         $handle = $notifiable->handle ?? $notifiable->mobile;
         $signature = config('mudmod.signature');
 
-        return trans('mudmod.listen', compact('handle', 'message', 'signature'));
+        return trans('mudmod.collected', compact('handle', 'message', 'signature'));
     }
 }

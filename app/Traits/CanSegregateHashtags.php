@@ -23,14 +23,4 @@ trait CanSegregateHashtags
 
         return $this;
     }
-
-//    public function uncatchHashtags(array $hashtags)
-//    {
-//        foreach ($hashtags as $hashtag) {
-//            $this->hashtags()->where('tag', $hashtag)->delete();
-//        }
-//        event(SMSRelayEvents::UNLISTENED, (new SMSRelayEvent($this))->setHashtags($hashtags));
-//
-//        return $this;
-//    }
 }

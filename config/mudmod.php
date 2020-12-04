@@ -2,14 +2,6 @@
 
 return [
     'country' => env('DEFAULT_COUNTRY','PH'),
-    'relay' => [
-        'log'       => env('RELAY_LOG',       true),
-        'email'     => env('RELAY_EMAIL',     true),
-        'mobile'    => env('RELAY_MOBILE',    true),
-        'reply'     => env('RELAY_REPLY',     true),
-        'hashtags'  => env('RELAY_HASHTAGS',  true),
-        'converse'  => env('RELAY_CONVERSE',  true),
-    ],
     'permissions' => [
         'admin'      => ['send message', 'issue command', 'broadcast message'],
         'agent'      => ['issue command'],

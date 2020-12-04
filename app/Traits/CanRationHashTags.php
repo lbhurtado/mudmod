@@ -6,7 +6,7 @@ use Illuminate\Support\Arr;
 use App\Models\{Contact, Ration};
 use App\Events\{SMSRelayEvents, SMSRelayEvent};
 
-trait CanRation
+trait CanRationHashTags
 {
     /**
      * @param string $code
@@ -33,6 +33,7 @@ trait CanRation
                 $voucher->update(['code' => $tag]);
                 $voucher->save();
             }
+
             event(SMSRelayEvents::RATIONED, (new SMSRelayEvent($this))->setHashtags($hashtags));
         });
 

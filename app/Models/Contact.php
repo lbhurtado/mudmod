@@ -2,16 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Arr;
 use Spatie\Permission\Traits\HasRoles;
 use LBHurtado\EngageSpark\Traits\HasEngageSpark;
 use LBHurtado\Missive\Models\Contact as BaseContact;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use App\Traits\{CanRedeemVouchers, CanRation, CanSegregateHashtags, HasEmail};
+use App\Traits\{CanRedeemVouchers, CanRationHashTags, HasEmail};
 
 class Contact extends BaseContact
 {
-    use HasFactory, HasRoles, CanRedeemVouchers, HasEngageSpark, CanRation, CanSegregateHashtags, HasEmail;
+    use HasFactory, HasRoles, CanRedeemVouchers, HasEngageSpark, CanRationHashTags, HasEmail;
 
     protected $guard_name = 'web';
 
@@ -27,17 +26,5 @@ class Contact extends BaseContact
             ->formatE164();
 
         return static::where('mobile', $phone)->first();
-    }
-
-    /**
-     * @param int $amount
-     * @param mixed ...$hashtags
-     * @return Contact
-     */
-    public function catch(int $amount, ...$hashtags): Contact
-    {
-        $hashtags = Arr::flatten($hashtags);
-
-        return $this->catchHashtags($hashtags, $amount);
     }
 }

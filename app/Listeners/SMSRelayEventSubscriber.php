@@ -6,7 +6,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use App\Events\{SMSRelayEvent, SMSRelayEvents};
-use App\Notifications\{Enlisted, Rationed, Listened, Relayed};
+use App\Notifications\{Enlisted, Rationed, Collected};
 
 class SMSRelayEventSubscriber implements ShouldQueue
 {
@@ -26,41 +26,13 @@ class SMSRelayEventSubscriber implements ShouldQueue
         });
     }
 
-    public function onSMSRelayListened(SMSRelayEvent $event)
+    public function onSMSRelayCollected(SMSRelayEvent $event)
     {
         tap($event->getContact(), function ($contact) use ($event) {
-            $contact->notify(new Listened($event->getTags()));
+            $contact->notify(new Collected($event->getVoucher()));
+//            $this->dispatch(new Credit($contact, config('sms-relay.credits.initial.spokesman')));
         });
     }
-
-//    public function onSMSRelayRedeemed(SMSRelayEvent $event)
-//    {
-//        tap($event->getContact(), function ($contact) use ($event) {
-//            $contact->notify(new Redeemed($event->getVoucher()));
-////            $this->dispatch(new Credit($contact, config('sms-relay.credits.initial.spokesman')));
-//        });
-//    }
-
-    public function onSMSRelayRelayed(SMSRelayEvent $event)
-    {
-        tap($event->getContact(), function ($contact) use ($event) {
-            $contact->notify(new Relayed($event->getMessage()));
-        });
-    }
-//
-//    public function onSMSRelayUnlistened(SMSRelayEvent $event)
-//    {
-//        tap($event->getContact(), function ($contact) use ($event) {
-//            $contact->notify(new Unlistened($event->getTags()));
-//        });
-//    }
-//
-//    public function onSMSRelayCredited(SMSRelayEvent $event)
-//    {
-//        tap($event->getContact(), function ($contact) use ($event) {
-//            $contact->notify(new Credited($event->getAmount()));
-//        });
-//    }
 
     public function subscribe($events)
     {
@@ -75,28 +47,8 @@ class SMSRelayEventSubscriber implements ShouldQueue
         );
 
         $events->listen(
-            SMSRelayEvents::LISTENED,
-            SMSRelayEventSubscriber::class.'@onSMSRelayListened'
+            SMSRelayEvents::COLLECTED,
+            SMSRelayEventSubscriber::class.'@onSMSRelayCollected'
         );
-
-//        $events->listen(
-//            SMSRelayEvents::REDEEMED,
-//            SMSRelayEventSubscriber::class.'@onSMSRelayRedeemed'
-//        );
-
-        $events->listen(
-            SMSRelayEvents::RELAYED,
-            SMSRelayEventSubscriber::class.'@onSMSRelayRelayed'
-        );
-//
-//        $events->listen(
-//            SMSRelayEvents::UNLISTENED,
-//            SMSRelayEventSubscriber::class.'@onSMSRelayUnlistened'
-//        );
-//
-//        $events->listen(
-//            SMSRelayEvents::CREDITED,
-//            SMSRelayEventSubscriber::class.'@onSMSRelayCredited'
-//        );
     }
 }

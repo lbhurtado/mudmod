@@ -23,9 +23,10 @@ class Enlist implements ShouldQueue
     public $name;
 
     /**
-     * RedeemCode constructor.
+     * Enlist constructor.
+     *
      * @param Contact $contact
-     * @param string $code
+     * @param string $code - generated voucher code for Role
      * @param string $name
      */
     public function __construct(Contact $contact, string $code, string $name)
@@ -54,6 +55,6 @@ class Enlist implements ShouldQueue
 
     protected function getVoucher(): \BeyondCode\Vouchers\Models\Voucher
     {
-        return $this->contact->redeemCode($this->code);
+        return $this->contact->enlistRole($this->code);
     }
 }

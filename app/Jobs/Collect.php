@@ -9,7 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-class Listen implements ShouldQueue
+class Collect implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -17,23 +17,23 @@ class Listen implements ShouldQueue
     public $contact;
 
     /** @var string */
-    public $tags;
+    public $tag;
 
-    /** @var int */
-    public $amount;
+    /** @var string */
+    public $name;
 
     /**
-     * Listen constructor.
+     * Redeem constructor.
      *
      * @param Contact $contact
-     * @param string $tags
-     * @param int $amount
+     * @param string $tag - generated voucher code for Ration
+     * @param string $name - name of redeemer
      */
-    public function __construct(Contact $contact, string $tags, int $amount)
+    public function __construct(Contact $contact, string $tag, string $name)
     {
         $this->contact = $contact;
-        $this->tags = $tags;
-        $this->amount = $amount;
+        $this->tag = $tag;
+        $this->name = $name;
     }
 
     /**
@@ -43,15 +43,6 @@ class Listen implements ShouldQueue
      */
     public function handle()
     {
-        $this->contact->catch($this->amount, $this->getHashtags($this->tags));
-    }
-
-    /**
-     * @param string $tags
-     * @return array
-     */
-    protected function getHashtags(string $tags): array
-    {
-        return explode(' ', $tags);
+        $this->contact->collectRation($this->tag, $this->name);
     }
 }

@@ -9,9 +9,9 @@ class LogMiddleware implements Middleware
 {
     public function execute($command, callable $next)
     {
-        Log::info("******************************");
+        Log::info("*********** START ***********");
         Log::info($command);
-        Log::info("******************************");
+        Log::info("************ END ************");
 
         $next($command);
     }

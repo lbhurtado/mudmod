@@ -11,11 +11,34 @@ use BeyondCode\Vouchers\Exceptions\VoucherAlreadyRedeemed;
 
 trait CanRedeemVouchers
 {
+    public function enlistRole(string $code) {
+        $voucher = $this->redeemCode($code);
+        event(SMSRelayEvents::ENLISTED, (new SMSRelayEvent($this))->setVoucher($voucher));
+
+        return $voucher;
+    }
+
+    public function collectRation(string $code, string $name) {
+        $voucher = null;
+        try {
+            $voucher = $this->redeemCode($code);
+            event(SMSRelayEvents::COLLECTED, (new SMSRelayEvent($this))->setVoucher($voucher));
+        }
+        catch (VoucherAlreadyRedeemed $e) {
+
+        }
+        $this->setAttribute('handle', $name)->save();
+
+        return $voucher;
+    }
+
     /**
      * @param string $code
      * @return mixed
+     * @throws VoucherAlreadyRedeemed
+     * @throws VoucherExpired
      */
-    public function redeemCode(string $code)
+    protected function redeemCode(string $code)
     {
         $voucher = Vouchers::check($code);
 
@@ -33,15 +56,6 @@ trait CanRedeemVouchers
         event(SMSRelayEvents::ENLISTED, (new SMSRelayEvent($this))->setVoucher($voucher));
 
         return $voucher;
-    }
-
-    /**
-     * @param Voucher $voucher
-     * @return mixed
-     */
-    public function redeemVoucher(Voucher $voucher)
-    {
-        return $this->redeemCode($voucher->code);
     }
 
     /**

@@ -8,6 +8,7 @@ use Opis\Events\EventDispatcher;
 use LBHurtado\Missive\Routing\Router;
 use LBHurtado\Missive\Models\Contact;
 use LBHurtado\Missive\Classes\SMSAbstract;
+use App\CommandBus\Middlewares\LogMiddleware;
 use LBHurtado\Tactician\Classes\ActionAbstract;
 use LBHurtado\Tactician\Contracts\ActionInterface;
 use Joselfonseca\LaravelTactician\CommandBusInterface;
@@ -27,7 +28,9 @@ class TemplateAction extends ActionAbstract implements ActionInterface
     protected $permission = 'issue command';
 
     /** @var array */
-    protected $middlewares = [];
+    protected $middlewares = [
+        LogMiddleware::class
+    ];
 
     /** @var array */
     protected $data = [];

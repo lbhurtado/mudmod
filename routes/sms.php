@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Role;
+use BeyondCode\Vouchers\Models\Voucher;
 use App\CommandBus\{CodesAction, EnlistAction, RationAction, CollectAction};
 
 $regex_code = ''; $regex_name = '';
@@ -12,4 +14,8 @@ tap(implode('|', array_keys($rations)), function ($codes) use ($router) {
     $router->register("RATION {code={$codes}} {tags}", RationAction::class);//TODO: Add testing for Ration
 });
 
-$router->register("{code={$regex_code}} {name={$regex_name}}", EnlistAction::class);
+if (Schema::hasTable('vouchers')) {
+    $regex_code = implode('|', Voucher::where('model_type', Role::class)->get()->pluck('code')->toArray());
+    $router->register("{code={$regex_code}} {name={$regex_name}}", EnlistAction::class);
+}
+

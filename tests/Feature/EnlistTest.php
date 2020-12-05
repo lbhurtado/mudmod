@@ -4,11 +4,11 @@ namespace Tests\Feature;
 
 use Mockery;
 use Setting;
-use App\Models\Role;
-use BeyondCode\Vouchers\Models\Voucher;
 use Tests\TestCase;
+use App\Models\{Role, Contact};
 use App\CommandBus\EnlistAction;
 use LBHurtado\Missive\Routing\Router;
+use BeyondCode\Vouchers\Models\Voucher;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class EnlistTest extends TestCase
@@ -42,6 +42,8 @@ class EnlistTest extends TestCase
         $regex_code = '';
         $regex_name = '';
         extract(enlist_regex());
+        $regex_code = Role::codeRegex();
+        $regex_name = Contact::nameRegex();
 
         $code = Voucher::where('model_type', Role::class)->first()->code;
         $name = $this->faker->name;
@@ -63,10 +65,12 @@ class EnlistTest extends TestCase
         $regex_code = '';
         $regex_name = '';
         extract(enlist_regex());
-        $regex_code = implode('|', Voucher::where('model_type', Role::class)->get()->pluck('code')->toArray());
-        
-        $code = 'XXXX-XXXX'; //TODO: make the route regex from database
+        $regex_code = Role::codeRegex();
+        $regex_name = Contact::nameRegex();
+
+        $code = 'XXXX-XXXX';
         $name = $this->faker->name;
+
         $from = '09171234567'; $to = '09182222222'; $message = "{$code} {$name}";
 
         /*** act ***/

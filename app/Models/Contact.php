@@ -27,4 +27,12 @@ class Contact extends BaseContact
 
         return static::where('mobile', $phone)->first();
     }
+
+    /**
+     * @return string
+     */
+    public static function nameRegex(): string
+    {
+        return ".*";
+    }
 }

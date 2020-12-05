@@ -32,12 +32,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7350dbc-9d68-4cde-a127-1f7c095e012c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Feature/CodesTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/EnlistTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/SettingSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/SettingSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/sms.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/sms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/SettingTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/SettingTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/EnlistTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/EnlistTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +259,7 @@
       <workItem from="1606742789471" duration="145000" />
       <workItem from="1606742949562" duration="444000" />
       <workItem from="1606743711006" duration="473000" />
-      <workItem from="1606744208801" duration="88115000" />
+      <workItem from="1606744208801" duration="91239000" />
     </task>
     <servers />
   </component>
@@ -307,18 +306,18 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="625" y="380" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1606399598725" />
-    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser" timestamp="1607047094966">
+    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser" timestamp="1607168479488">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1607047094966" />
+    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1607168479488" />
     <state x="373" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607080151527">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="373" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1607080151527" />
-    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607165354321">
+    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607167224331">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1607165354321" />
+    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1607167224331" />
     <state x="701" y="339" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1606276915195">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>

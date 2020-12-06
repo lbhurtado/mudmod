@@ -39,9 +39,6 @@ class EnlistTest extends TestCase
     public function correct_role_voucher_code_and_name_invokes_codes_action()
     {
         /*** arrange ***/
-        $regex_code = '';
-        $regex_name = '';
-        extract(enlist_regex());
         $regex_code = Role::codeRegex();
         $regex_name = Contact::nameRegex();
 
@@ -62,9 +59,6 @@ class EnlistTest extends TestCase
     public function wrong_role_voucher_code_and_name_invokes_codes_action()
     {
         /*** arrange ***/
-        $regex_code = '';
-        $regex_name = '';
-        extract(enlist_regex());
         $regex_code = Role::codeRegex();
         $regex_name = Contact::nameRegex();
 

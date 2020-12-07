@@ -28,6 +28,7 @@ trait CanRationHashTags
     public function rationHashTags(array $hashtags, string $code)
     {
         optional(Ration::where('code', $code)->first(), function (Ration $ration) use ($hashtags) {
+
             foreach ($hashtags as $tag) {
                 $voucher = $ration->createVoucher();
                 $voucher->update(['code' => $tag]);

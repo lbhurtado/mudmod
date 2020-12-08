@@ -24,3 +24,10 @@ if (Schema::hasTable('vouchers')) {
     $router->register("{code={$regex_code}} {name={$regex_name}}", EnlistAction::class);
 }
 
+$regex_json = '';
+extract(mudmod_regex());
+
+$router->register("MUDMOD {json=$regex_json}", function(string $path, array $values) {
+    dd(json_decode($values['json'], true));
+});
+

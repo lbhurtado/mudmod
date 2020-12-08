@@ -28,7 +28,7 @@ class CreateVouchersTable extends Migration
             $table->unsignedInteger('contact_id');
             $table->unsignedInteger('voucher_id');
             $table->timestamp('redeemed_at');
-
+            $table->timestamp('increased_at')->nullable();
             $table->foreign('contact_id')->references('id')->on('contacts');
             $table->foreign('voucher_id')->references('id')->on($voucherTable);
         });

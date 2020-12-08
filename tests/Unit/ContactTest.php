@@ -57,4 +57,32 @@ class ContactTest extends TestCase
         /*** assert ***/
         $this->assertTrue($this->contact->is($contact));
     }
+
+    /** @test */
+    public function contact_has_zero_balance_at_the_onset()
+    {
+        /*** arrange ***/
+        $mobile = $this->mobile;
+
+        /*** act ***/
+        $contact = Contact::bearing($mobile);
+
+        /*** assert ***/
+        $this->assertTrue($contact->balance == 0);
+    }
+
+    /** @test */
+    public function contact_can_increase_balance()
+    {
+        /*** arrange ***/
+        $mobile = $this->mobile;
+        $amount = rand(100, 1000);
+
+        /*** act ***/
+        $contact = Contact::bearing($mobile);
+        $contact->increase($amount);
+
+        /*** assert ***/
+        $this->assertTrue($contact->balance == $amount);
+    }
 }

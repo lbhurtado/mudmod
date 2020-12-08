@@ -32,12 +32,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7350dbc-9d68-4cde-a127-1f7c095e012c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Feature/CollectTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ContactVoucher.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/balance.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_07_230127_create_balance_tables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mudmod.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mudmod.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Ration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Ration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Traits/CanRationHashTags.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/CanRationHashTags.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/ContactSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ContactSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/CanRedeemVouchers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/CanRedeemVouchers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_01_104130_create_vouchers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_01_104130_create_vouchers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/sms.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/sms.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ContactTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ContactTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,6 +208,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/vendor/nojimage/twitter-text-php" />
       <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-vouchers" />
+      <path value="$PROJECT_DIR$/vendor/illuminatech/balance" />
+      <path value="$PROJECT_DIR$/vendor/illuminatech/array-factory" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kfcRLtvrF6vXSiOuusIIqIbxSp" />
@@ -260,7 +273,7 @@
       <workItem from="1606742789471" duration="145000" />
       <workItem from="1606742949562" duration="444000" />
       <workItem from="1606743711006" duration="473000" />
-      <workItem from="1606744208801" duration="109724000" />
+      <workItem from="1606744208801" duration="130694000" />
     </task>
     <servers />
   </component>
@@ -307,18 +320,18 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="625" y="380" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1606399598725" />
-    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser" timestamp="1607168479488">
+    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser" timestamp="1607440532303">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1607168479488" />
+    <state x="709" y="294" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1607440532303" />
     <state x="373" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607080151527">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="373" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1607080151527" />
-    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607313820425">
+    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607381609695">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1607313820425" />
+    <state x="634" y="333" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1607381609695" />
     <state x="701" y="339" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1607267336144">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -367,9 +380,9 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="13" y="198" width="1636" height="728" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1606786495050" />
-    <state x="561" y="272" width="954" height="676" key="search.everywhere.popup" timestamp="1607309113922">
+    <state x="561" y="272" width="954" height="676" key="search.everywhere.popup" timestamp="1607467733018">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="272" width="954" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1607309113922" />
+    <state x="561" y="272" width="954" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1607467733018" />
   </component>
 </project>

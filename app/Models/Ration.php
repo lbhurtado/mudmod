@@ -6,6 +6,7 @@ use BeyondCode\Vouchers\Models\Voucher;
 use Illuminate\Database\Eloquent\Model;
 use BeyondCode\Vouchers\Traits\HasVouchers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use phpDocumentor\Reflection\Types\Integer;
 
 class Ration extends Model
 {
@@ -17,11 +18,31 @@ class Ration extends Model
         'message'
     ];
 
+    protected $casts = [
+        'amount' => 'float',
+    ];
+
     /**
      * @return string
      */
     static public function tagsRegex() : string
     {
         return implode('|', Voucher::where('model_type', Ration::class)->get()->pluck('code')->toArray());
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->getAttribute('id');
+    }
+
+    /**
+     * @return float
+     */
+    public function getAmount(): float
+    {
+        return $this->getAttribute('amount');
     }
 }

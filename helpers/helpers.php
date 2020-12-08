@@ -27,3 +27,14 @@ if (! function_exists('enlist_regex')) {
         ];
     }
 }
+
+if (! function_exists('mudmod_regex')) {
+    function mudmod_regex() {
+        $regex_json = '\{.*\}';
+
+        return [
+            'regex_json' => $regex_json,
+            'regex_name' => ".*"
+        ];
+    }
+}

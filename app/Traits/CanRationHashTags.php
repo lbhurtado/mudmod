@@ -25,7 +25,7 @@ trait CanRationHashTags
      * @param string $code
      * @return $this
      */
-    public function rationHashTags(array $hashtags, string $code)
+    protected function rationHashTags(array $hashtags, string $code)
     {
         optional(Ration::where('code', $code)->first(), function (Ration $ration) use ($hashtags) {
 

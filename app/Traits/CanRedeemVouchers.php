@@ -3,6 +3,7 @@
 namespace App\Traits;
 
 use Vouchers;
+use App\Models\ContactVoucher as Pivot;
 use BeyondCode\Vouchers\Models\Voucher;
 use App\Events\{SMSRelayEvents, SMSRelayEvent};
 use BeyondCode\Vouchers\Exceptions\VoucherExpired;
@@ -61,6 +62,6 @@ trait CanRedeemVouchers
      */
     public function vouchers()
     {
-        return $this->belongsToMany(Voucher::class)->withPivot('redeemed_at');
+        return $this->belongsToMany(Voucher::class)->using(Pivot::class)->withPivot('redeemed_at', 'increased_at');
     }
 }

@@ -37,7 +37,7 @@ class EnlistActionTest extends TestCase
 
         /*** assert ***/
         Bus::assertDispatched(Enlist::class, function ($job) use ($sms, $code, $name) {
-            return $job->contact === $sms->origin && $job->code == $code && $job->name == $name;
+            return $job->contact === $sms->origin && $job->code == $code && $job->handle == $name;
         });
     }
 

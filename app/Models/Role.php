@@ -17,4 +17,12 @@ class Role extends Model
     {
         return implode('|', Voucher::where('model_type', Role::class)->get()->pluck('code')->toArray());
     }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->getAttribute('id');
+    }
 }

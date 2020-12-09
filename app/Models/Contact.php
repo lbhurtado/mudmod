@@ -4,8 +4,6 @@ namespace App\Models;
 
 use DB;
 use Balance;
-use App\Models\Ration;
-use BeyondCode\Vouchers\Models\Voucher;
 use Spatie\Permission\Traits\HasRoles;
 use LBHurtado\EngageSpark\Traits\HasEngageSpark;
 use LBHurtado\Missive\Models\Contact as BaseContact;
@@ -40,6 +38,10 @@ class Contact extends BaseContact
         return ".*";
     }
 
+    /**
+     * @param int $amount
+     * @return $this
+     */
     public function increase(int $amount)
     {
         Balance::increase(
@@ -56,24 +58,37 @@ class Contact extends BaseContact
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function getBalanceAttribute()
     {
         $contact_id = $this->id;
-        $type = 'virtual-money';
+        $type = 'virtual-money';//TODO: put this somewhere appropriate
 
         return Balance::calculateBalance(compact('contact_id', 'type'));
     }
 
+    /**
+     * @return mixed
+     */
     public function rations()
     {
         return  $this->vouchers()->where('model_type', Ration::class);
     }
 
+    /**
+     * @return mixed
+     */
     public function getRationsAttribute()
     {
         return  $this->rations()->get();
     }
 
+    /**
+     * @param Ration $ration
+     * @return bool
+     */
     public function consume(Ration $ration)
     {
         $exception = DB::transaction(function() use ($ration) {

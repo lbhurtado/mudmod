@@ -2,8 +2,8 @@
 
 namespace App\Jobs;
 
+use App\Models\Contact;
 use Illuminate\Bus\Queueable;
-use App\Models\{Contact, Role};
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -20,41 +20,28 @@ class Enlist implements ShouldQueue
     public $code;
 
     /** @var string */
-    public $name;
+    public $handle;
 
     /**
      * Enlist constructor.
      *
      * @param Contact $contact
      * @param string $code - generated voucher code for Role
-     * @param string $name
+     * @param string $handle
      */
-    public function __construct(Contact $contact, string $code, string $name)
+    public function __construct(Contact $contact, string $code, string $handle)
     {
         $this->contact = $contact;
         $this->code = $code;
-        $this->name = $name;
+        $this->handle = $handle;
     }
 
     /**
-     * Execute the job.
-     *
-     * @return void
+     * @throws \BeyondCode\Vouchers\Exceptions\VoucherAlreadyRedeemed
+     * @throws \BeyondCode\Vouchers\Exceptions\VoucherExpired
      */
     public function handle()
     {
-        $this->contact->syncRoles($this->getRole());
-        $this->contact->update(['handle' => $this->name]);
-        $this->contact->save();
-    }
-
-    protected function getRole(): Role
-    {
-        return $this->getVoucher()->model;
-    }
-
-    protected function getVoucher(): \BeyondCode\Vouchers\Models\Voucher
-    {
-        return $this->contact->enlistRole($this->code);
+        $this->contact->enlistRole($this->code, $this->handle);
     }
 }

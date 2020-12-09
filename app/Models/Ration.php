@@ -6,7 +6,6 @@ use BeyondCode\Vouchers\Models\Voucher;
 use Illuminate\Database\Eloquent\Model;
 use BeyondCode\Vouchers\Traits\HasVouchers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use phpDocumentor\Reflection\Types\Integer;
 
 class Ration extends Model
 {

@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use App\Models\Role;
 use Vouchers;
 use App\Models\ContactVoucher as Pivot;
 use BeyondCode\Vouchers\Models\Voucher;
@@ -12,14 +13,35 @@ use BeyondCode\Vouchers\Exceptions\VoucherAlreadyRedeemed;
 
 trait CanRedeemVouchers
 {
-    public function enlistRole(string $code) {
-        $voucher = $this->redeemCode($code);
-        event(SMSRelayEvents::ENLISTED, (new SMSRelayEvent($this))->setVoucher($voucher));
-
-        return $voucher;
+    /**
+     * @return mixed
+     */
+    public function vouchers()
+    {
+        return $this->belongsToMany(Voucher::class)->using(Pivot::class)->withPivot('redeemed_at', 'increased_at');
     }
 
-    public function collectRation(string $code, string $name) {
+    /**
+     * @param string $code
+     * @param string $handle
+     * @return $this
+     * @throws VoucherAlreadyRedeemed
+     * @throws VoucherExpired
+     */
+    public function enlistRole(string $code, string $handle = null) {
+        $voucher = $this->redeemCode($code);
+        tap($voucher->model, function (Role $role) use ($handle) {
+            $this->syncRoles($role);
+            if ($handle) {
+                tap($this)->update(compact('handle'))->save();
+            }
+        });
+        event(SMSRelayEvents::ENLISTED, (new SMSRelayEvent($this))->setVoucher($voucher));
+
+        return $this;
+    }
+
+    public function collectRation(string $code, string $handle) {
         $voucher = null;
         try {
             $voucher = $this->redeemCode($code);
@@ -28,7 +50,7 @@ trait CanRedeemVouchers
         catch (VoucherAlreadyRedeemed $e) {
 
         }
-        $this->setAttribute('handle', $name)->save();
+        $this->setAttribute('handle', $handle)->save();
 
         return $voucher;
     }
@@ -55,13 +77,5 @@ trait CanRedeemVouchers
         ]);
 
         return $voucher;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function vouchers()
-    {
-        return $this->belongsToMany(Voucher::class)->using(Pivot::class)->withPivot('redeemed_at', 'increased_at');
     }
 }

@@ -29,8 +29,10 @@ class SMSRelayEventSubscriber implements ShouldQueue
     public function onSMSRelayCollected(SMSRelayEvent $event)
     {
         tap($event->getContact(), function ($contact) use ($event) {
-            $contact->notify(new Collected($event->getVoucher()));
-//            $this->dispatch(new Credit($contact, config('sms-relay.credits.initial.spokesman')));
+            tap($event->getVoucher(), function ($voucher) use ($contact) {
+                tap($contact)->consume($voucher->model)
+                    ->notify(new Collected($voucher));
+            });
         });
     }
 

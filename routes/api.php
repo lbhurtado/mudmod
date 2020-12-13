@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('transact')->group(function() {
+    Route::post('{mobile}/{action}/{amount}', [\App\Http\Controllers\TransactController::class, 'transfer'])
+        ->where('action', 'debit|credit')
+        ->where('mobile', '^(09|\+639)\d{9}$')
+        ->where('amount', '[0-9]+');
+});
+
+

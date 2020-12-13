@@ -16,7 +16,7 @@ class Contact extends BaseContact
 
     protected $guard_name = 'web';
 
-    protected $appends = array('email');
+    protected $appends = array('email', 'balance');
 
     /**
      * @param string $mobile
@@ -58,10 +58,20 @@ class Contact extends BaseContact
         return $this;
     }
 
+    public function credit(int $amount)
+    {
+        return $this->increase($amount);
+    }
+
+    public function debit(int $amount)
+    {
+        return $this->increase($amount * -1);
+    }
+
     /**
-     * @return mixed
+     * @return float
      */
-    public function getBalanceAttribute()
+    public function getBalanceAttribute():float
     {
         $contact_id = $this->id;
         $type = 'virtual-money';//TODO: put this somewhere appropriate

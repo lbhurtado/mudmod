@@ -27,7 +27,7 @@ if (Schema::hasTable('vouchers')) {
 $regex_json = '';
 extract(mudmod_regex());
 
-$router->register("MUDMOD {json=$regex_json}", function(string $path, array $values) {
-    dd(json_decode($values['json'], true));
+$router->register("MUDMOD", function(string $path, array $values) {
+    dd('Hello World!');
 });
 

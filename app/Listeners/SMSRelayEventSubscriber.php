@@ -6,7 +6,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use App\Events\{SMSRelayEvent, SMSRelayEvents};
-use App\Notifications\{Enlisted, Rationed, Collected};
+use App\Notifications\{Enlisted, Rationed, Collected, Verified};
 
 class SMSRelayEventSubscriber implements ShouldQueue
 {
@@ -36,6 +36,13 @@ class SMSRelayEventSubscriber implements ShouldQueue
         });
     }
 
+    public function onSMSRelayVerified(SMSRelayEvent $event)
+    {
+        tap($event->getContact(), function ($contact) use ($event) {
+            $contact->notify(new Verified('OTP')); //TODO: Create Notification
+        });
+    }
+
     public function subscribe($events)
     {
         $events->listen(
@@ -51,6 +58,11 @@ class SMSRelayEventSubscriber implements ShouldQueue
         $events->listen(
             SMSRelayEvents::COLLECTED,
             SMSRelayEventSubscriber::class.'@onSMSRelayCollected'
+        );
+
+        $events->listen(
+            SMSRelayEvents::VERIFIED,
+            SMSRelayEventSubscriber::class.'@onSMSRelayVerified'
         );
     }
 }

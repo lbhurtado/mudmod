@@ -137,6 +137,41 @@ class ContactTest extends TestCase
         $this->assertEquals($this->contact->handle, $handle);
     }
 
+    /** @test */
+    public function contact_is_initially_unverified()
+    {
+        /*** assert ***/
+        $this->assertFalse($this->contact->verified());
+    }
+
+    /** @test */
+    public function contact_cannot_be_verified_via_wrong_otp()
+    {
+        /*** arrange ***/
+        $this->contact->challenge();
+        $otp = $this->faker->numberBetween(1000,9999);
+
+        /*** act ***/
+        $this->contact->verify($otp);
+
+        /*** assert ***/
+        $this->assertFalse($this->contact->verified());
+    }
+
+    /** @test */
+    public function contact_can_be_verified_via_correct_otp()
+    {
+        /*** arrange ***/
+        $this->contact->challenge();
+        $otp = $this->contact->getTOTP()->now();
+
+        /*** act ***/
+        $this->contact->verify($otp);
+
+        /*** assert ***/
+        $this->assertTrue($this->contact->verified());
+    }
+
     /**
      * @param string $roleName
      * @return string

@@ -22,12 +22,12 @@ class Contact extends BaseContact
      * @param string $mobile
      * @return Contact|null
      */
-    public static function bearing(string $mobile):? Contact //TODO change this to by
+    public static function bearing(string &$mobile):? Contact //TODO change this to by
     {
-        $phone = phone($mobile, config('mudmod.country'))
+        $mobile = phone($mobile, config('mudmod.country'))
             ->formatE164();
 
-        return static::where('mobile', $phone)->first();
+        return static::where('mobile', $mobile)->first();
     }
 
     /**

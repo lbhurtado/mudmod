@@ -25,4 +25,12 @@ Route::prefix('transact')->group(function() {
         ->where('amount', '[0-9]+');
 });
 
+Route::prefix('debit')->group(function() {
+    Route::post('{mobile}/{otp}/{amount}', [\App\Http\Controllers\TransactController::class, 'debit'])
+        ->where('mobile', '^(09|\+?639)\d{9}$')
+        ->where('otp', '[0-9]+')
+        ->where('amount', '[0-9]+')
+    ;
+});
+
 

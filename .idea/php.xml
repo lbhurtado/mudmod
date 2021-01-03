@@ -148,6 +148,7 @@
       <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-vouchers" />
       <path value="$PROJECT_DIR$/vendor/illuminatech/balance" />
       <path value="$PROJECT_DIR$/vendor/illuminatech/array-factory" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sail" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

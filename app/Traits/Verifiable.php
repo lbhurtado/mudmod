@@ -17,17 +17,29 @@ trait Verifiable
 
     protected $expiration = 60;
 
+    /**
+     * @param null $notification
+     * @return $this
+     */
     public function challenge($notification = null)
     {
         $this->hasOTPChallenge();
 
         RequestOTP::dispatch($this, $this->getTOTP()->now());
+
+        return $this;
     }
 
+    /**
+     * @param $otp
+     * @return $this
+     */
     public function verify($otp)
     {
         if ($this->hasOTPVerify($otp)->verified())
             event(SMSRelayEvents::VERIFIED, new SMSRelayEvent($this));
+
+        return $this;
     }
 
     public function isVerificationStale()

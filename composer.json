@@ -29,6 +29,7 @@
     "require-dev": {
         "facade/ignition": "^2.5",
         "gh640/phpunit-tap": "^5.0",
+        "laravel/sail": "^1.0",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.3.3"

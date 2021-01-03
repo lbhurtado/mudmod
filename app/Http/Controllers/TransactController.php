@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use Symfony\Component\HttpFoundation\Response;
 
 class TransactController extends Controller
 {
@@ -28,24 +29,22 @@ class TransactController extends Controller
      */
     public function debit(string $mobile, string $otp, int $amount)
     {
-//        $contact = Contact::bearing($mobile);
-//        if (! $contact)
-//            return response('Error: mobile number not found!', 500);
+        $contact = Contact::bearing($mobile);
+        if (! $contact)
+            return response('Error: mobile number not found!', Response::HTTP_INTERNAL_SERVER_ERROR);
 
-//        $contact->verify($otp);
+        $contact->verify($otp);
 
-//        if (! $contact->verified())
-//            return response('Error: mobile number not verified!', 500);
+        if (! $contact->verified())
+            return response('Error: mobile number not verified!', Response::HTTP_INTERNAL_SERVER_ERROR);
 
-//        if ($contact->balance < $amount)
-//            $amount = $contact->balance;
-//
-//        $contact->debit($amount);
-        $mobile = '+639173011987';
-        $amount = 500;
+        if ($contact->balance < $amount)
+            $amount = $contact->balance;
+
+        $contact->debit($amount);
         $message = 'The quick brown fox...';
 
-        return response(json_encode(compact('mobile', 'amount', 'message')), 200)
+        return response(json_encode(compact('mobile', 'amount', 'message')), Response::HTTP_OK)
             ->header('Content-Type', 'text/json');
     }
 }

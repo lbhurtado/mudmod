@@ -2382,16 +2382,16 @@
         },
         {
             "name": "lbhurtado/missive",
-            "version": "2.0.1",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lbhurtado/missive.git",
-                "reference": "2b813116dc6547f5850e6122187919da920b1e16"
+                "reference": "7f1e56c7d1e2f8146205c5a801ae2d4f3d69f444"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lbhurtado/missive/zipball/2b813116dc6547f5850e6122187919da920b1e16",
-                "reference": "2b813116dc6547f5850e6122187919da920b1e16",
+                "url": "https://api.github.com/repos/lbhurtado/missive/zipball/7f1e56c7d1e2f8146205c5a801ae2d4f3d69f444",
+                "reference": "7f1e56c7d1e2f8146205c5a801ae2d4f3d69f444",
                 "shasum": ""
             },
             "require": {
@@ -2449,9 +2449,9 @@
             ],
             "support": {
                 "issues": "https://github.com/lbhurtado/missive/issues",
-                "source": "https://github.com/lbhurtado/missive/tree/2.0.1"
+                "source": "https://github.com/lbhurtado/missive/tree/v2.1.0"
             },
-            "time": "2020-11-22T02:43:53+00:00"
+            "time": "2021-01-04T08:02:56+00:00"
         },
         {
             "name": "lbhurtado/sms",

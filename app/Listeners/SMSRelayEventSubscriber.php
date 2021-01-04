@@ -30,8 +30,11 @@ class SMSRelayEventSubscriber implements ShouldQueue
     {
         tap($event->getContact(), function ($contact) use ($event) {
             tap($event->getVoucher(), function ($voucher) use ($contact) {
-                tap($contact)->consume($voucher->model)
-                    ->notify(new Collected($voucher));
+//                tap($contact)->consume($voucher->model)
+//                    ->notify(new Collected($voucher));
+                if ($contact->consume($voucher->model)) {
+                    $contact->challenge();
+                }
             });
         });
     }

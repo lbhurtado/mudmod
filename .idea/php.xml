@@ -149,6 +149,7 @@
       <path value="$PROJECT_DIR$/vendor/illuminatech/balance" />
       <path value="$PROJECT_DIR$/vendor/illuminatech/array-factory" />
       <path value="$PROJECT_DIR$/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/vendor/grosv/laravel-passwordless-login" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

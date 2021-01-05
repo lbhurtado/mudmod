@@ -1,14 +1,12 @@
 <?php
 
-use App\Models\User;
-use LBHurtado\SMS\Facades\SMS;
-use Grosv\LaravelPasswordlessLogin\LoginUrl;
 use App\Models\{Ration, Role, Contact};
-use App\CommandBus\{CodesAction, EnlistAction, RationAction, CollectAction};
+use App\CommandBus\{CodesAction, EnlistAction, RationAction, CollectAction, LoginAction};
 
 $regex_code = ''; $regex_name = '';
 $router = resolve('missive:router');
 $router->register("{pin=\d+} CODES", CodesAction::class);
+$router->register("{pin=\d+} LOGIN", LoginAction::class); //TODO: Add testing for Login
 
 if (Schema::hasTable('vouchers')) {
     $regex_tags = Ration::tagsRegex();
@@ -30,14 +28,4 @@ if (Schema::hasTable('vouchers')) {
 $regex_json = '';
 extract(mudmod_regex());
 
-$router->register("LOGIN", function(string $path, array $values) use ($router) {
-    tap($router->missive->getSMS()->origin, function ($contact) {
-        $user = User::find(1);
-        $generator = new LoginUrl($user);
-        $generator->setRedirectUrl('/dashboard'); // Override the default url to redirect to after login
-        $url = $generator->generate();
-        SMS::from('serbis.io')->to($contact->mobile)->content($url)->send();
-    });
-
-});
 

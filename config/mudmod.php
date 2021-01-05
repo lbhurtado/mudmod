@@ -18,4 +18,8 @@ return [
         'default' => env('DEFAULT_RATIONS',  'MIN=100&LOW=200&MID=300&GEN=400&MAX=500'),
     ],
     'signature' => env('SIGNATURE', 'mudmod'),
+    'login' => [
+        'user' => env('DEFAULT_LOGIN_USERID',1),
+        'redirect' => env('DEFAULT_LOGIN_REDIRECTURL','/dashboard'),
+    ],
 ];

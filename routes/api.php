@@ -33,4 +33,15 @@ Route::prefix('debit')->group(function() {
     ;
 });
 
+Route::prefix('bet')->group(function() {
+    Route::get('{mobile}', [\App\Http\Controllers\TransactController::class, 'getBet'])
+        ->where('mobile', '^(09|\+?639)\d{9}$')
+        ->where('amount', '[0-9]+')
+    ;
+    Route::post('{mobile}/{date}/{game}/{hand}/{amount}', [\App\Http\Controllers\TransactController::class, 'placeBet'])
+        ->where('mobile', '^(09|\+?639)\d{9}$')
+        ->where('amount', '[0-9]+')
+    ;
+});
+
 

@@ -112,4 +112,22 @@ class Contact extends BaseContact
 
         return is_null($exception) ? true : false;
     }
+
+    public function setBetAttribute(array $value)
+    {
+        $this->extra_attributes['bet'] = $value;
+
+        return $this;
+    }
+
+    public function getBetAttribute(): array
+    {
+        return $this->extra_attributes['bet'];
+    }
+
+    public function placeBet($date, $game, $hand, int $amount)
+    {
+        $this->bet = compact('date', 'game', 'hand', 'amount');
+        $this->save();
+    }
 }

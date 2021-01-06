@@ -32,14 +32,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7350dbc-9d68-4cde-a127-1f7c095e012c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/Commands/LoginCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/Handlers/LoginHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/CommandBus/LoginAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/Login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Jobs/PlaceBet.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mudmod.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mudmod.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/mudmod.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/mudmod.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/sms.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/sms.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ContactTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ContactTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,11 +241,20 @@
       <recent name="$PROJECT_DIR$/tests/Unit" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.ContactTest.contact_can_bet">
+    <configuration name="ContactTest.contact_can_bet" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ContactTest" file="$PROJECT_DIR$/tests/Unit/ContactTest.php" method="contact_can_bet" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.ContactTest.contact_can_bet" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -271,7 +278,7 @@
       <workItem from="1608391876729" duration="4230000" />
       <workItem from="1609080147766" duration="8171000" />
       <workItem from="1609288983066" duration="3378000" />
-      <workItem from="1609519696065" duration="21967000" />
+      <workItem from="1609519696065" duration="28443000" />
     </task>
     <servers />
   </component>
@@ -378,9 +385,9 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="13" y="198" width="1636" height="728" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1609687956695" />
-    <state x="561" y="272" width="954" height="676" key="search.everywhere.popup" timestamp="1609801991375">
+    <state x="561" y="272" width="954" height="676" key="search.everywhere.popup" timestamp="1609903363256">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="272" width="954" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1609801991375" />
+    <state x="561" y="272" width="954" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1609903363256" />
   </component>
 </project>

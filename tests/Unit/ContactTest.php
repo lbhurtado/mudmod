@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Jobs\PlaceBet;
 use Tests\TestCase;
 use App\Models\{Contact, Ration, Role};
 use BeyondCode\Vouchers\Models\Voucher;
@@ -170,6 +171,22 @@ class ContactTest extends TestCase
 
         /*** assert ***/
         $this->assertTrue($this->contact->verified());
+    }
+
+    /** @test */
+    public function contact_can_bet()
+    {
+        /*** arrange ***/
+        $date = $this->faker->date('Y-m-d');
+        $game = $this->faker->numberBetween(1,350);
+        $hand = $this->faker->randomElement(['MERON', 'WALA', 'DRAW', 'CANCELLED']);
+        $amount = $this->faker->randomElement([100,200,500,1000,5000,10000]);
+
+        /*** act ***/
+        $this->contact->placeBet($date, $game, $hand, $amount);
+
+        /*** assert ***/
+        $this->assertEquals($this->contact->bet, compact('date', 'game', 'hand', 'amount'));
     }
 
     /**

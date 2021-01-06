@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\PlaceBet;
 use App\Models\Contact;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -45,6 +46,28 @@ class TransactController extends Controller
         $message = 'The quick brown fox...';
 
         return response(json_encode(compact('mobile', 'amount', 'message')), Response::HTTP_OK)
+            ->header('Content-Type', 'text/json');
+    }
+
+    public function getBet(string $mobile)
+    {
+        $contact = Contact::bearing($mobile);
+        if (! $contact)
+            return response('Error: mobile number not found!', Response::HTTP_INTERNAL_SERVER_ERROR);
+
+        return response(json_encode($contact->bet), Response::HTTP_OK)
+            ->header('Content-Type', 'text/json');
+    }
+
+    public function placeBet(string $mobile, string $date, int $game, string $hand, int $amount)
+    {
+        $contact = Contact::bearing($mobile);
+        if (! $contact)
+            return response('Error: mobile number not found!', Response::HTTP_INTERNAL_SERVER_ERROR);
+
+        $this->dispatch(new PlaceBet($contact, $date, $game, $hand, $amount));
+
+        return response(json_encode(compact('mobile', 'date', 'game', 'hand', 'amount')), Response::HTTP_OK)
             ->header('Content-Type', 'text/json');
     }
 }

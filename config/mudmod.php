@@ -22,4 +22,7 @@ return [
         'user' => env('DEFAULT_LOGIN_USERID',1),
         'redirect' => env('DEFAULT_LOGIN_REDIRECTURL','/dashboard'),
     ],
+    'otp' => [
+        'bypass' =>   env('OTP_BYPASS',0),
+    ],
 ];

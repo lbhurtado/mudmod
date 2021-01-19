@@ -95,6 +95,32 @@ class ApiDebitTest extends TestCase
     }
 
     /** @test */
+    public function ApiDebitRequiresExistingMobileInvalidValidOTPValidAmountUnlessBypassed()
+    {
+        /*** arrange ***/
+        $mobile = '09171234567';
+        $contact = $this->createContact($mobile)->challenge();
+        $otp = '0000';;
+        $amount = $this->faker->numberBetween(100,1000); //max amount requested
+        $starting_balance = $this->faker->numberBetween(100,1000);
+        $contact->credit($starting_balance);
+
+        /*** act ***/
+        $this->app['config']->set('mudmod.otp.bypass', 1);
+        $response = $this->post($this->endpoint . "/$mobile/$otp/$amount");
+
+        /*** assert ***/
+        $this->assertEquals($starting_balance < $amount ? 0 : $starting_balance - $amount, $contact->balance);
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJson([
+                'mobile' => $contact->mobile,
+                'amount' => min($starting_balance, $amount),
+                'message' => 'The quick brown fox...'
+            ]);
+    }
+
+    /** @test */
     public function ApiDebitRequiresExistingMobileCorrectOTPInvalidValidAmount_404()
     {
         /*** arrange ***/

@@ -36,8 +36,9 @@ class TransactController extends Controller
 
         $contact->verify($otp);
 
-        if (! $contact->verified())
-            return response('Error: mobile number not verified!', Response::HTTP_INTERNAL_SERVER_ERROR);
+        if (config('mudmod.otp.bypass') == 0)
+            if (! $contact->verified())
+                return response('Error: mobile number not verified!', Response::HTTP_INTERNAL_SERVER_ERROR);
 
         if ($contact->balance < $amount)
             $amount = $contact->balance;
